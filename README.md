@@ -1,85 +1,73 @@
-# MayoUI (for React)
+# mayoui
 
-- 내가 쓰려고 만드는 리액트 ui.
+React UI 컴포넌트 라이브러리입니다.
 
-### version 0.0.1 (이제 만들었는데 뭘..)
+## 설치
 
-## Library
-
-```
-   1. React >= 19.2.4
+```bash
+npm install mayoui
 ```
 
-<!-- # React + TypeScript + Vite
+## 컴포넌트
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### MayoBtn
 
-Currently, two official plugins are available:
+기본 버튼 컴포넌트입니다.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+```tsx
+import { MayoBtn } from "mayoui";
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+<MayoBtn>클릭</MayoBtn>;
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+#### Props
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+| Prop       | 타입                                  | 기본값      | 설명               |
+| ---------- | ------------------------------------- | ----------- | ------------------ |
+| `variant`  | `"primary" \| "secondary" \| "ghost"` | `"primary"` | 버튼 스타일        |
+| `size`     | `"sm" \| "md" \| "lg"`                | `"md"`      | 버튼 크기          |
+| `disabled` | `boolean`                             | `false`     | 비활성화 여부      |
+| `onClick`  | `React.MouseEventHandler`             | —           | 클릭 이벤트 핸들러 |
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-``` -->
+그 외 `<button>` 의 모든 기본 속성을 지원합니다.
+
+#### 사용 예시
+
+```tsx
+// variant
+<MayoBtn variant="primary">Primary</MayoBtn>
+<MayoBtn variant="secondary">Secondary</MayoBtn>
+<MayoBtn variant="ghost">Ghost</MayoBtn>
+
+// size
+<MayoBtn size="sm">Small</MayoBtn>
+<MayoBtn size="md">Medium</MayoBtn>
+<MayoBtn size="lg">Large</MayoBtn>
+
+// disabled
+<MayoBtn disabled>비활성화</MayoBtn>
+```
+
+---
+
+### MayoDialog
+
+> 개발 중입니다.
+
+---
+
+## 개발
+
+```bash
+# 의존성 설치
+npm install
+
+# 개발 서버 실행
+npm run dev
+
+# 테스트 실행
+npm run test
+
+# 빌드
+npm run build
+```
