@@ -9,28 +9,28 @@ describe("MayoBtn", () => {
         expect(screen.getByRole("button", { name: "클릭" })).toBeInTheDocument();
     });
 
-    it("클릭하면 onClick이 호출된다", async () => {
+    it("Test onclick", async () => {
         const user = userEvent.setup();
         const handleClick = vi.fn();
 
-        render(<MayoBtn onClick={handleClick}>클릭</MayoBtn>);
+        render(<MayoBtn onClick={handleClick}>mayo Onclick</MayoBtn>);
 
-        await user.click(screen.getByRole("button", { name: "클릭" }));
+        await user.click(screen.getByRole("button", { name: "mayo Onclick" }));
 
         expect(handleClick).toHaveBeenCalledTimes(1);
     });
 
-    it("disabled 상태에서는 클릭되지 않는다", async () => {
+    it("disabled Test", async () => {
         const user = userEvent.setup();
         const handleClick = vi.fn();
 
         render(
             <MayoBtn disabled onClick={handleClick}>
-                클릭
+                mayo is disabled
             </MayoBtn>,
         );
 
-        await user.click(screen.getByRole("button", { name: "클릭" }));
+        await user.click(screen.getByRole("button", { name: "mayo is disabled" }));
 
         expect(handleClick).not.toHaveBeenCalled();
     });
@@ -38,11 +38,11 @@ describe("MayoBtn", () => {
     it("variant와 size class를 가진다", () => {
         render(
             <MayoBtn variant="ghost" size="lg">
-                클릭
+                mayoCheck
             </MayoBtn>,
         );
 
-        const button = screen.getByRole("button", { name: "클릭" });
+        const button = screen.getByRole("button", { name: "mayoCheck" });
 
         expect(button).toHaveClass("mayo-btn");
         expect(button).toHaveClass("mayo-btn--ghost");
