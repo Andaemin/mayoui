@@ -1,4 +1,16 @@
-# React + TypeScript + Vite
+# MayoUI (for React)
+
+- 내가 쓰려고 만드는 리액트 ui.
+
+### version 0.0.1 (이제 만들었는데 뭘..)
+
+## Library
+
+```
+   일단 보류
+```
+
+<!-- # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
@@ -70,4 +82,4 @@ export default defineConfig([
     },
   },
 ])
-```
+``` -->
