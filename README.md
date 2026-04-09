@@ -7,7 +7,7 @@
 ## Library
 
 ```
-   일단 보류
+   1. React >= 19.2.4
 ```
 
 <!-- # React + TypeScript + Vite
