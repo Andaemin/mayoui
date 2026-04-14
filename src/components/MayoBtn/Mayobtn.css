@@ -1,0 +1,52 @@
+.mayo-btn {
+    font-family: var(--mayo-font-body);
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.mayo-btn--primary {
+    background: #111;
+    color: #fff;
+}
+
+.mayo-btn--secondary {
+    background: #f3f4f6;
+    color: #111;
+}
+
+.mayo-btn--ghost {
+    background: transparent;
+    color: #111;
+}
+
+.mayo-btn--xs {
+    padding: 6px 10px;
+    font-size: 12px;
+    border-radius: 10px;
+}
+.mayo-btn--sm {
+    padding: 8px 12px;
+    font-size: 14px;
+    border-radius: 12px;
+}
+.mayo-btn--md {
+    padding: 10px 16px;
+    font-size: 16px;
+    border-radius: 14px;
+}
+.mayo-btn--lg {
+    padding: 12px 18px;
+    font-size: 18px;
+    border-radius: 16px;
+}
+.mayo-btn--xl {
+    padding: 14px 22px;
+    font-size: 20px;
+    border-radius: 18px;
+}
+.mayo-btn--2xl {
+    padding: 16px 26px;
+    font-size: 24px;
+    border-radius: 20px;
+}

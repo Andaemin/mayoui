@@ -1,3 +1,4 @@
+import "./MayoBtn.css";
 import type { MayoBtnProps } from "./MayoBtn.types";
 
 export function MayoBtn({ children, variant = "primary", size = "md", className = "", type = "button", ...props }: MayoBtnProps) {

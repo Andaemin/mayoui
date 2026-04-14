@@ -17,7 +17,7 @@ function App() {
                 <p>Mayo Btn Test</p>
                 <ul>
                     <MayoBtn onClick={() => setCount((a) => a + 1)}>This Buttion Click! {count}</MayoBtn>
-                    <MayoBtn variant="ghost">This Primary</MayoBtn>
+                    <MayoBtn variant="secondary">This Secondary</MayoBtn>
                 </ul>
             </section>
 
