@@ -22,12 +22,12 @@ import { MayoBtn } from "mayoui";
 
 #### Props
 
-| Prop       | 타입                                          | 기본값      | 설명               |
-| ---------- | --------------------------------------------- | ----------- | ------------------ |
-| `variant`  | `"primary" \| "secondary" \| "ghost"`         | `"primary"` | 버튼 스타일        |
-| `size`     | `"xs"\|"sm" \| "md" \| "lg" \| "xl"\| "2xl" ` | `"md"`      | 버튼 크기          |
-| `disabled` | `boolean`                                     | `false`     | 비활성화 여부      |
-| `onClick`  | `React.MouseEventHandler`                     | —           | 클릭 이벤트 핸들러 |
+| Prop       | 타입                                           | 기본값      | 설명               |
+| ---------- | ---------------------------------------------- | ----------- | ------------------ |
+| `variant`  | `"primary" \| "secondary" \| "ghost"`          | `"primary"` | 버튼 스타일        |
+| `size`     | `"xs"\| "sm" \| "md" \| "lg" \| "xl"\| "2xl" ` | `"md"`      | 버튼 크기          |
+| `disabled` | `boolean`                                      | `false`     | 비활성화 여부      |
+| `onClick`  | `React.MouseEventHandler`                      | —           | 클릭 이벤트 핸들러 |
 
 그 외 `<button>` 의 모든 기본 속성을 지원합니다.
 
