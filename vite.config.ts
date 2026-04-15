@@ -8,12 +8,16 @@ export default defineConfig({
         react(),
         dts({
             tsconfigPath: "./tsconfig.app.json",
+            include: ["src/components", "src/hooks", "src/utils", "src/index.ts"],
+            exclude: ["src/playground", "src/test", "src/main.tsx", "**/*.test.tsx", "**/*.test.ts"],
             entryRoot: "src",
-            insertTypesEntry: true,
-            include: ["src"],
+            compilerOptions: {
+                rootDir: resolve(__dirname, "src"),
+            },
         }),
     ],
     build: {
+        copyPublicDir: false,
         lib: {
             entry: resolve(__dirname, "src/index.ts"),
             name: "MayoUI",
