@@ -16,13 +16,11 @@ function App() {
                 </div>
                 <p>Mayo Btn Test</p>
                 <ul>
-                    <MayoBtn onClick={() => setCount((a) => a + 1)} color="green">
-                        테스트 {count}
+                    <MayoBtn onClick={() => setCount((a) => a + 1)} color="blue" size="lg">
+                        테스트
                     </MayoBtn>
-                    <br />
-                    <MayoBtn variant="secondary" color="green">
-                        This Secondary
-                    </MayoBtn>
+                    <h2>{count}</h2>
+                    <MayoBtn variant="secondary">This Secondary</MayoBtn>
                 </ul>
             </section>
 
