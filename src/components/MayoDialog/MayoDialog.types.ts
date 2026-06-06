@@ -1,8 +1,10 @@
-// import { createContext, useContext, type PropsWithChildren, type ReactNode } from "react";
+import type { PropsWithChildren, HTMLAttributes } from "react";
 
-// type DialogContextValue = {
-//     open: boolean;
-//     onClose: () => void;
-// };
+export type MayoDialogProps = PropsWithChildren<{
+    open: boolean;
+    onClose: () => void;
+}>;
+
+export type MayoDialogContentProps = PropsWithChildren<HTMLAttributes<HTMLDivElement>>;
 
 // const DialogContext = createContext<DialogContextValue | null>(null);
