@@ -1,2 +1,2 @@
-export { MayoDialog } from "./MayoDialog";
-export type { MayoDialogProps, MayoDialogSize } from "./MayoDialog.types";
+export * from "./MayoDialog";
+export * from "./MayoDialog.types";

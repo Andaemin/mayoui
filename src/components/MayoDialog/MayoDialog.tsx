@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { MayoBtn } from "../MayoBtn";
 import "./MayoDialog.css";
 import type { MayoDialogProps } from "./MayoDialog.types";
 
@@ -26,9 +27,9 @@ export function MayoDialog({ open, onClose, title, footer, children, size = "md"
             {title && (
                 <div className="mayo-dialog__header">
                     <span className="mayo-dialog__title">{title}</span>
-                    <button className="mayo-dialog__close" onClick={onClose} aria-label="닫기">
+                    <MayoBtn variant="ghost" size="sm" onClick={onClose} aria-label="닫기">
                         ✕
-                    </button>
+                    </MayoBtn>
                 </div>
             )}
             <div className="mayo-dialog__body">{children}</div>
