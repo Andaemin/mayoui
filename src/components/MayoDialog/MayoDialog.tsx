@@ -2,24 +2,16 @@ import { useEffect, useRef } from "react";
 import "./MayoDialog.css";
 import type { MayoDialogProps } from "./MayoDialog.types";
 
-export function MayoDialog({
-    open,
-    onClose,
-    title,
-    footer,
-    children,
-    size = "md",
-    closeOnBackdrop = true,
-}: MayoDialogProps) {
+export function MayoDialog({ open, onClose, title, footer, children, size = "md", closeOnBackdrop = true }: MayoDialogProps) {
     const dialogRef = useRef<HTMLDialogElement>(null);
 
     useEffect(() => {
-        const dialog = dialogRef.current;
-        if (!dialog) return;
+        const mayoDialog = dialogRef.current;
+        if (!mayoDialog) return;
         if (open) {
-            dialog.showModal();
+            mayoDialog.showModal();
         } else {
-            dialog.close();
+            mayoDialog.close();
         }
     }, [open]);
 
@@ -30,12 +22,7 @@ export function MayoDialog({
     };
 
     return (
-        <dialog
-            ref={dialogRef}
-            className={`mayo-dialog mayo-dialog--${size}`}
-            onClick={handleBackdropClick}
-            onCancel={onClose}
-        >
+        <dialog ref={dialogRef} className={`mayo-dialog mayo-dialog--${size}`} onClick={handleBackdropClick} onCancel={onClose}>
             {title && (
                 <div className="mayo-dialog__header">
                     <span className="mayo-dialog__title">{title}</span>
