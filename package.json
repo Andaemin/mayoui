@@ -1,6 +1,6 @@
 {
-    "name": "mayoui",
-    "version": "0.0.2",
+    "name": "mayoui-react",
+    "version": "0.1.0",
     "description": "React UI 컴포넌트 라이브러리",
     "keywords": [
         "react",
@@ -12,7 +12,7 @@
         "toast"
     ],
     "license": "MIT",
-    "author": "nayeon",
+    "author": "creamnayeon",
     "repository": {
         "type": "git",
         "url": "https://github.com/Andaemin/mayoui"
