@@ -2,12 +2,20 @@
     "name": "mayoui",
     "version": "0.0.2",
     "description": "React UI 컴포넌트 라이브러리",
-    "keywords": ["react", "ui", "components", "typescript", "button", "dialog", "toast"],
+    "keywords": [
+        "react",
+        "ui",
+        "components",
+        "typescript",
+        "button",
+        "dialog",
+        "toast"
+    ],
     "license": "MIT",
     "author": "nayeon",
     "repository": {
         "type": "git",
-        "url": "https://github.com/nayeon/mayoui"
+        "url": "https://github.com/Andaemin/mayoui"
     },
     "type": "module",
     "main": "./dist/index.js",
