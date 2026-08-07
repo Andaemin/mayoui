@@ -1,7 +1,7 @@
 import "./MayoInput.css";
 import type { MayoInputProps } from "./MayoInput.types";
 
-export function MayoInput({ label, error, hint, size = "md", className = "", id, ...props }: MayoInputProps) {
+export function MayoInput({ label, labelAlign = "left", error, hint, size = "md", className = "", id, ...props }: MayoInputProps) {
     const inputId = id ?? (label ? `mayo-input-${label}` : undefined);
     const inputClassName = ["mayo-input", `mayo-input--${size}`, error ? "mayo-input--error" : "", className]
         .filter(Boolean)
@@ -10,7 +10,7 @@ export function MayoInput({ label, error, hint, size = "md", className = "", id,
     return (
         <div className="mayo-input-wrapper">
             {label && (
-                <label className="mayo-input__label" htmlFor={inputId}>
+                <label className="mayo-input__label" style={{ textAlign: labelAlign }} htmlFor={inputId}>
                     {label}
                 </label>
             )}

@@ -35,7 +35,7 @@ function App() {
                 >
                     다이얼로그 테스트.
                 </MayoDialog>
-                <MayoInput size="sm" />
+                <MayoInput size="sm" label="test" placeholder="tester" labelAlign="left" />
             </section>
 
             <div className="ticks"></div>

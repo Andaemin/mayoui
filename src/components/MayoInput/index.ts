@@ -1,2 +1,2 @@
 export { MayoInput } from "./MayoInput";
-export type { MayoInputProps, MayoInputSize } from "./MayoInput.types";
+export type { MayoInputProps, MayoInputSize, MayoInputLabelAlign } from "./MayoInput.types";
