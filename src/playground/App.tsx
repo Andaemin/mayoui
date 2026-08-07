@@ -2,6 +2,7 @@ import { useState } from "react";
 import { MayoBtn } from "../components/MayoBtn";
 import { MayoDialog } from "../components/MayoDialog";
 import "../styles/App.css";
+import { MayoInput } from "../components/MayoInput";
 
 function App() {
     const [count, setCount] = useState(0);
@@ -34,6 +35,7 @@ function App() {
                 >
                     다이얼로그 테스트.
                 </MayoDialog>
+                <MayoInput size="sm" />
             </section>
 
             <div className="ticks"></div>
