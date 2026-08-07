@@ -3,6 +3,7 @@ import { MayoBtn } from "../components/MayoBtn";
 import { MayoDialog } from "../components/MayoDialog";
 import "../styles/App.css";
 import { MayoInput } from "../components/MayoInput";
+import { MayoHeader } from "../components/MayoHeader";
 
 function App() {
     const [count, setCount] = useState(0);
@@ -10,6 +11,16 @@ function App() {
 
     return (
         <>
+            <MayoHeader
+                nav={
+                    <>
+                        <a href="/">Home</a>
+                        <a href="/docs">Docs</a>
+                        <a href="/about">Info</a>
+                    </>
+                }
+                actions={<MayoBtn size="sm">로그인</MayoBtn>}
+            />
             <section id="center">
                 <div>
                     <h1>ui Mayo</h1>
