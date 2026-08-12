@@ -4,6 +4,7 @@ import { MayoDialog } from "../components/MayoDialog";
 import "../styles/App.css";
 import { MayoInput } from "../components/MayoInput";
 import { MayoHeader } from "../components/MayoHeader";
+import { MayoBadge } from "../components/MayoBadge";
 
 function App() {
     const [count, setCount] = useState(0);
@@ -47,6 +48,23 @@ function App() {
                     다이얼로그 테스트.
                 </MayoDialog>
                 <MayoInput size="sm" label="test" placeholder="tester" labelAlign="left" />
+                <div className="badge-group">
+                    <MayoBadge color="blue" variant="soft" iconClassName="tossface">
+                        Component
+                    </MayoBadge>
+                    <MayoBadge color="red" variant="soft" icon="🌹" iconClassName="tossface">
+                        Hot
+                    </MayoBadge>
+                    <MayoBadge color="green" variant="soft" icon="✅" iconClassName="tossface">
+                        component
+                    </MayoBadge>
+                    <MayoBadge color="purple" variant="soft" icon="⭐" iconClassName="tossface">
+                        Best
+                    </MayoBadge>
+                    <MayoBadge color="gray" variant="soft" icon="📌" iconClassName="tossface">
+                        Draft
+                    </MayoBadge>
+                </div>
             </section>
 
             <div className="ticks"></div>
