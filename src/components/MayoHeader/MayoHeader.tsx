@@ -5,8 +5,10 @@ export function MayoHeader({ logo, nav, actions }: MayoHeaderProps) {
     return (
         <header className="mayo-header">
             <div className="mayo-header__left">{logo}</div>
-            <div className="mayo-header__center">{nav}</div>
-            <div className="mayo-header__right">{actions}</div>
+            <div className="mayo-header__center">
+                {nav}
+                {actions && <div className="mayo-header__actions">{actions}</div>}
+            </div>
         </header>
     );
 }

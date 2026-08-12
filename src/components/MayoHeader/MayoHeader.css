@@ -21,21 +21,21 @@
     gap: 8px;
 }
 
-.mayo-header__center a,
-.mayo-header__right a {
+.mayo-header__center a {
     text-decoration: none;
     color: inherit;
     transition: opacity 0.2s ease;
 }
 
-.mayo-header__center a:hover,
-.mayo-header__right a:hover {
+.mayo-header__center a:hover {
     opacity: 0.6;
 }
 
-.mayo-header__right {
+.mayo-header__actions {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-    gap: 8px;
+    gap: 4px;
+    margin-left: 16px;
+    padding-left: 16px;
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
 }
