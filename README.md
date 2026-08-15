@@ -7,7 +7,7 @@
 
 <img src="./assets/Daemintossface.png" width="200" />
 
-<h3>한국인이 사용하기 쉬운 UI 를 만드는게 목표입니다</h3>
+<h3>한국인이 사용하기 쉬운 React UI 를</h3>
 
 [![][version]](https://www.npmjs.com/package/Mayoui-react)
 [![][commit]](https://github.com/AnDaemin/mayoui)
