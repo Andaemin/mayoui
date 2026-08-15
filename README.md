@@ -27,8 +27,6 @@
 npm install mayoui
 ```
 
----
-
 <h3> <a href=""> ✅ 공식 문서 (미완)</a> <h3>
 
 <h3> <a href=""> ❓ 사용 방법 (미완)</a> <h3>
