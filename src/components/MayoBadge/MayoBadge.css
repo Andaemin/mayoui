@@ -1,7 +1,7 @@
 .mayo-badge {
     display: inline-flex;
     align-items: center;
-    font-weight: 600;
+    font-weight: 500;
     border-radius: 999px;
     white-space: nowrap;
     letter-spacing: 0.01em;
@@ -15,21 +15,21 @@
 
 /* size */
 .mayo-badge--sm {
-    padding: 0 5px;
-    font-size: 13px;
+    padding: 0 4px;
+    font-size: 11px;
 }
 
 .mayo-badge--md {
-    padding: 0 10px;
-    font-size: 15px;
+    padding: 0 6px;
+    font-size: 12px;
 }
 
 .mayo-badge--lg {
-    padding: 0 5px;
-    font-size: 17px;
+    padding: 0 8px;
+    font-size: 13px;
 }
 
-/* solid  */
+/* solid */
 .mayo-badge--solid.mayo-badge--blue {
     background: #3abff8;
     color: #fff;
@@ -56,29 +56,29 @@
     border: none;
 }
 
-/* soft — solid의 연한 버전 */
+/* soft */
 .mayo-badge--soft.mayo-badge--blue {
-    background: #f3fafd;
-    color: #19a2e2;
-    border: 1px solid #c9e8f9;
+    background: #edfafd;
+    color: #0891b2;
+    border: 1px solid #a5e6f7;
 }
 .mayo-badge--soft.mayo-badge--red {
-    background: #fdf6f6;
-    color: #e35858;
-    border: 1px solid #fca5a5;
+    background: #fffbfb;
+    color: #dc2626;
+    border: 1px solid #fbb6b6;
 }
 .mayo-badge--soft.mayo-badge--green {
-    background: #f4fef9;
-    color: #2ce3a6;
-    border: 1px solid #eefaf6;
+    background: #f4fff9;
+    color: #059669;
+    border: 1px solid #6ee7b7;
 }
 .mayo-badge--soft.mayo-badge--purple {
-    background: #f3e8ff;
-    color: #a855f7;
-    border: 1px solid #d8b4fe;
+    background: #f9f7ff;
+    color: #b99fe6;
+    border: 1px solid #e9e4ff;
 }
 .mayo-badge--soft.mayo-badge--gray {
-    background: #f3f4f6;
-    color: #6b7280;
-    border: 1px solid #d1d5db;
+    background: #fafbff;
+    color: #565f6d;
+    border: 1px solid #d9e8ff;
 }
