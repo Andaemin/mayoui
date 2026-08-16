@@ -5,11 +5,31 @@ import "../styles/App.css";
 import { MayoInput } from "../components/MayoInput";
 import { MayoHeader } from "../components/MayoHeader";
 import { MayoBadge } from "../components/MayoBadge";
+import { MayoSelect } from "../components/MayoSelect";
 
 function App() {
     const [count, setCount] = useState(0);
     const [open, setOpen] = useState(false);
+    const playTestValue = [
+        { value: "TestComponent", label: "Test Component" },
+        { value: "banana", label: "바나나" },
+        { value: "grape", label: "포도", disabled: true },
+    ];
+    const [errorTest, setErrorTest] = useState("");
+    const [selected, setSelected] = useState("");
 
+    const errorTestHandler = (e: React.ChangeEvent<HTMLSelectElement>) => {
+        setSelected(e.target.value);
+        if (errorTest) setErrorTest("");
+    };
+
+    const handleSubmit = () => {
+        if (!selected) {
+            setErrorTest("과일을 선택해주세요!");
+            return;
+        }
+        alert(`선택한 과일: ${selected}`);
+    };
     return (
         <>
             <MayoHeader
@@ -65,6 +85,28 @@ function App() {
                         Draft
                     </MayoBadge>
                 </div>
+                <div className="selectTest">
+                    <MayoSelect
+                        label="과일 선택"
+                        placeholder="선택해주세요"
+                        options={playTestValue}
+                        hint="하나를 골라주세요"
+                        error={errorTest}
+                        onChange={errorTestHandler}
+                        size="sm"
+                    />
+
+                    <MayoSelect
+                        label="과일 선택"
+                        placeholder="선택해주세요"
+                        options={playTestValue}
+                        hint="하나를 골라주세요"
+                        error={errorTest}
+                        onChange={errorTestHandler}
+                        size="sm"
+                    />
+                </div>
+                <MayoBtn onClick={handleSubmit}>제출</MayoBtn>
             </section>
 
             <div className="ticks"></div>
