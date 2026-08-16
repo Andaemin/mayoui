@@ -6,6 +6,7 @@ import { MayoInput } from "../components/MayoInput";
 import { MayoHeader } from "../components/MayoHeader";
 import { MayoBadge } from "../components/MayoBadge";
 import { MayoSelect } from "../components/MayoSelect";
+import { MayoLoadingSpinner } from "../components/MayoLoadingSpinner";
 
 function App() {
     const [count, setCount] = useState(0);
@@ -107,6 +108,11 @@ function App() {
                     />
                 </div>
                 <MayoBtn onClick={handleSubmit}>제출</MayoBtn>
+                <div className="selectTest">
+                    <MayoLoadingSpinner size="sm" />
+                    <MayoLoadingSpinner size="md" color="gray" label="마요 로딩 스피너 테스트.." />
+                    <MayoLoadingSpinner size="lg" color="green" />
+                </div>
             </section>
 
             <div className="ticks"></div>
