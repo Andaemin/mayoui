@@ -7,6 +7,8 @@ import { MayoHeader } from "../components/MayoHeader";
 import { MayoBadge } from "../components/MayoBadge";
 import { MayoSelect } from "../components/MayoSelect";
 import { MayoLoadingSpinner } from "../components/MayoLoadingSpinner";
+import { MayoDropdown } from "../components/MayoDropdown";
+import { MayoBreadcrumb } from "../components/MayoBreadcrumb";
 
 function App() {
     const [count, setCount] = useState(0);
@@ -113,6 +115,22 @@ function App() {
                     <MayoLoadingSpinner size="md" color="gray" label="마요 로딩 스피너 테스트.." />
                     <MayoLoadingSpinner size="lg" color="green" />
                 </div>
+                <MayoBreadcrumb
+                    items={[
+                        { label: "홈", href: "/" },
+                        { label: "컴포넌트", href: "/components" },
+                        { label: "MayoBreadcrumb" },
+                    ]}
+                />
+                <MayoDropdown
+                    trigger={<MayoBtn size="sm">메뉴 ▾</MayoBtn>}
+                    items={[
+                        { label: "프로필", icon: "👤", onClick: () => alert("프로필") },
+                        { label: "설정", icon: "⚙️", onClick: () => alert("설정") },
+                        { label: "비활성화", icon: "🚫", disabled: true },
+                        { label: "로그아웃", icon: "🚪", onClick: () => alert("로그아웃") },
+                    ]}
+                />
             </section>
 
             <div className="ticks"></div>

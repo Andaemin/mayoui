@@ -1,0 +1,47 @@
+.mayo-divider--horizontal {
+    width: 100%;
+    border: none;
+    border-top-style: solid;
+    border-color: #e5e7eb;
+    border-width: 1px;
+    margin: 0;
+}
+
+.mayo-divider--horizontal.mayo-divider--dashed {
+    border-top-style: dashed;
+}
+
+.mayo-divider--horizontal.mayo-divider--dotted {
+    border-top-style: dotted;
+}
+
+.mayo-divider--vertical {
+    display: inline-block;
+    height: 100%;
+    border-left-style: solid;
+    border-color: #e5e7eb;
+    border-width: 1px;
+    margin: 0;
+    align-self: stretch;
+}
+
+.mayo-divider--labeled {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border: none;
+}
+
+.mayo-divider__line {
+    flex: 1;
+    border: none;
+    border-top-style: solid;
+    border-color: #e5e7eb;
+    border-width: 1px;
+}
+
+.mayo-divider__label {
+    font-size: 13px;
+    color: #9ca3af;
+    white-space: nowrap;
+}
