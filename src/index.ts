@@ -8,4 +8,5 @@ export * from "./components/MayoHeader";
 export * from "./components/MayoLoadingSpinner";
 export * from "./components/MayoInput";
 export * from "./components/MayoSelect";
+export * from "./components/MayoSidebar";
 export * from "./components/MayoToast";

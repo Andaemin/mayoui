@@ -2,8 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import "./MayoDropdown.css";
 import type { MayoDropdownProps } from "./MayoDropdown.types";
 
-export function MayoDropdown({ trigger, items, align = "left" }: MayoDropdownProps) {
-    const [open, setOpen] = useState(false);
+export function MayoDropdown({ trigger, items, align = "left", defaultOpen = false }: MayoDropdownProps) {
+    const [open, setOpen] = useState(defaultOpen);
     const ref = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
@@ -33,7 +33,7 @@ export function MayoDropdown({ trigger, items, align = "left" }: MayoDropdownPro
                                 setOpen(false);
                             }}
                         >
-                            {item.icon && <span className="mayo-dropdown__icon">{item.icon}</span>}
+                            {item.icon && <span className={["mayo-dropdown__icon", item.iconClassName].filter(Boolean).join(" ")}>{item.icon}</span>}
                             {item.label}
                         </li>
                     ))}

@@ -9,6 +9,7 @@ import { MayoSelect } from "../components/MayoSelect";
 import { MayoLoadingSpinner } from "../components/MayoLoadingSpinner";
 import { MayoDropdown } from "../components/MayoDropdown";
 import { MayoBreadcrumb } from "../components/MayoBreadcrumb";
+import { MayoSidebar } from "../components/MayoSidebar";
 
 function App() {
     const [count, setCount] = useState(0);
@@ -35,6 +36,21 @@ function App() {
     };
     return (
         <>
+            <MayoSidebar
+                activePath={window.location.pathname}
+                items={[
+                    { label: "홈", icon: "🏠", href: "/" },
+                    {
+                        label: "컴포넌트", icon: "🧩",
+                        children: [
+                            { label: "버튼", href: "/components/button" },
+                            { label: "인풋", href: "/components/input" },
+                            { label: "배지", href: "/components/badge" },
+                        ],
+                    },
+                    { label: "설정", icon: "⚙️", href: "/settings" },
+                ]}
+            />
             <MayoHeader
                 nav={
                     <>
@@ -119,16 +135,16 @@ function App() {
                     items={[
                         { label: "홈", href: "/" },
                         { label: "컴포넌트", href: "/components" },
-                        { label: "MayoBreadcrumb" },
+                        { label: "MayoBreadcrumb", href: "www.naver.com" },
                     ]}
                 />
                 <MayoDropdown
                     trigger={<MayoBtn size="sm">메뉴 ▾</MayoBtn>}
                     items={[
-                        { label: "프로필", icon: "👤", onClick: () => alert("프로필") },
-                        { label: "설정", icon: "⚙️", onClick: () => alert("설정") },
-                        { label: "비활성화", icon: "🚫", disabled: true },
-                        { label: "로그아웃", icon: "🚪", onClick: () => alert("로그아웃") },
+                        { label: "프로필", icon: "👤", iconClassName: "tossface", onClick: () => alert("프로필") },
+                        { label: "설정", icon: "⚙️", iconClassName: "tossface", onClick: () => alert("설정") },
+                        { label: "비활성화", icon: "🚫", iconClassName: "tossface", disabled: true },
+                        { label: "로그아웃", icon: "🚪", iconClassName: "tossface", onClick: () => alert("로그아웃") },
                     ]}
                 />
             </section>
