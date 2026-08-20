@@ -10,6 +10,7 @@ import { MayoLoadingSpinner } from "../components/MayoLoadingSpinner";
 import { MayoDropdown } from "../components/MayoDropdown";
 import { MayoBreadcrumb } from "../components/MayoBreadcrumb";
 import { MayoSidebar } from "../components/MayoSidebar";
+import { MayoTextarea } from "../components/MayoTextarea";
 import { MdExpandMore } from "react-icons/md";
 
 function App() {
@@ -54,7 +55,9 @@ function App() {
                     items={[
                         { label: "홈", icon: "🏠", iconClassName: "tossface", href: "/" },
                         {
-                            label: "컴포넌트", icon: "🧩", iconClassName: "tossface",
+                            label: "컴포넌트",
+                            icon: "🧩",
+                            iconClassName: "tossface",
                             children: [
                                 { label: "버튼", href: "/components/button" },
                                 { label: "인풋", href: "/components/input" },
@@ -90,12 +93,23 @@ function App() {
                         다이얼로그 테스트.
                     </MayoDialog>
                     <MayoInput size="sm" label="test" placeholder="tester" labelAlign="left" />
+                    <MayoTextarea label="문의 내용" placeholder="내용을 입력해주세요" hint="최대 500자" rows={4} />
                     <div className="badge-group">
-                        <MayoBadge color="blue" variant="soft" iconClassName="tossface">Component</MayoBadge>
-                        <MayoBadge color="red" variant="soft" icon="🌹" iconClassName="tossface">Hot</MayoBadge>
-                        <MayoBadge color="green" variant="soft" icon="✅" iconClassName="tossface">component</MayoBadge>
-                        <MayoBadge color="purple" variant="soft" icon="⭐" iconClassName="tossface">Best</MayoBadge>
-                        <MayoBadge color="gray" variant="soft" icon="📌" iconClassName="tossface">Draft</MayoBadge>
+                        <MayoBadge color="blue" variant="soft" iconClassName="tossface">
+                            Component
+                        </MayoBadge>
+                        <MayoBadge color="red" variant="soft" icon="🌹" iconClassName="tossface">
+                            Hot
+                        </MayoBadge>
+                        <MayoBadge color="green" variant="soft" icon="✅" iconClassName="tossface">
+                            component
+                        </MayoBadge>
+                        <MayoBadge color="purple" variant="soft" icon="⭐" iconClassName="tossface">
+                            Best
+                        </MayoBadge>
+                        <MayoBadge color="gray" variant="soft" icon="📌" iconClassName="tossface">
+                            Draft
+                        </MayoBadge>
                     </div>
                     <div className="selectTest">
                         <MayoSelect
@@ -131,7 +145,11 @@ function App() {
                         ]}
                     />
                     <MayoDropdown
-                        trigger={<MayoBtn size="sm">메뉴 <MdExpandMore style={{ verticalAlign: "middle" }} /></MayoBtn>}
+                        trigger={
+                            <MayoBtn size="sm">
+                                메뉴 <MdExpandMore style={{ verticalAlign: "middle" }} />
+                            </MayoBtn>
+                        }
                         items={[
                             { label: "프로필", icon: "👤", iconClassName: "tossface", onClick: () => alert("프로필") },
                             { label: "설정", icon: "⚙️", iconClassName: "tossface", onClick: () => alert("설정") },
