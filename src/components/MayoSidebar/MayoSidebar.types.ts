@@ -6,6 +6,7 @@ export type MayoSidebarChild = {
 export type MayoSidebarItem = {
     label: string;
     icon?: string;
+    iconClassName?: string;
     href?: string;
     children?: MayoSidebarChild[];
 };

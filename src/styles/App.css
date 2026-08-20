@@ -58,6 +58,12 @@
     }
 }
 
+.app-layout {
+    display: flex;
+    flex: 1;
+    min-height: 0;
+}
+
 .badge-group {
     display: flex;
     align-items: center;

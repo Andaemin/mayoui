@@ -13,4 +13,5 @@ export type MayoDropdownProps = {
     items: MayoDropdownItem[];
     align?: "left" | "right";
     defaultOpen?: boolean;
+    onOpenChange?: (open: boolean) => void;
 };

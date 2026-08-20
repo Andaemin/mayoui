@@ -2,23 +2,30 @@ import { useEffect, useRef, useState } from "react";
 import "./MayoDropdown.css";
 import type { MayoDropdownProps } from "./MayoDropdown.types";
 
-export function MayoDropdown({ trigger, items, align = "left", defaultOpen = false }: MayoDropdownProps) {
+export function MayoDropdown({ trigger, items, align = "left", defaultOpen = false, onOpenChange }: MayoDropdownProps) {
     const [open, setOpen] = useState(defaultOpen);
     const ref = useRef<HTMLDivElement>(null);
+
+    const handleToggle = () => {
+        const next = !open;
+        setOpen(next);
+        onOpenChange?.(next);
+    };
 
     useEffect(() => {
         const handleClickOutside = (e: MouseEvent) => {
             if (ref.current && !ref.current.contains(e.target as Node)) {
                 setOpen(false);
+                onOpenChange?.(false);
             }
         };
         document.addEventListener("mousedown", handleClickOutside);
         return () => document.removeEventListener("mousedown", handleClickOutside);
-    }, []);
+    }, [onOpenChange]);
 
     return (
         <div className="mayo-dropdown" ref={ref}>
-            <div className="mayo-dropdown__trigger" onClick={() => setOpen((v) => !v)}>
+            <div className="mayo-dropdown__trigger" onClick={handleToggle}>
                 {trigger}
             </div>
             {open && (

@@ -10,6 +10,7 @@ import { MayoLoadingSpinner } from "../components/MayoLoadingSpinner";
 import { MayoDropdown } from "../components/MayoDropdown";
 import { MayoBreadcrumb } from "../components/MayoBreadcrumb";
 import { MayoSidebar } from "../components/MayoSidebar";
+import { MdExpandMore } from "react-icons/md";
 
 function App() {
     const [count, setCount] = useState(0);
@@ -34,23 +35,9 @@ function App() {
         }
         alert(`선택한 과일: ${selected}`);
     };
+
     return (
         <>
-            <MayoSidebar
-                activePath={window.location.pathname}
-                items={[
-                    { label: "홈", icon: "🏠", href: "/" },
-                    {
-                        label: "컴포넌트", icon: "🧩",
-                        children: [
-                            { label: "버튼", href: "/components/button" },
-                            { label: "인풋", href: "/components/input" },
-                            { label: "배지", href: "/components/badge" },
-                        ],
-                    },
-                    { label: "설정", icon: "⚙️", href: "/settings" },
-                ]}
-            />
             <MayoHeader
                 nav={
                     <>
@@ -61,94 +48,99 @@ function App() {
                 }
                 actions={<MayoBtn size="sm">로그인</MayoBtn>}
             />
-            <section id="center">
-                <div>
-                    <h1>ui Mayo</h1>
-                    <p>
-                        Hi <code>MayoUi</code> getStarted <code>npm install mayoui</code>
-                    </p>
-                </div>
-                <p>Mayo Btn Test</p>
-                <ul>
-                    <MayoBtn onClick={() => setCount((a) => a + 1)} color="blue" size="lg">
-                        테스트
-                    </MayoBtn>
-                    <h2>{count}</h2>
-                    <MayoBtn variant="secondary">This Secondary</MayoBtn>
-                </ul>
-                <p>Mayo Dialog Test</p>
-                <MayoBtn onClick={() => setOpen(true)}>다이얼로그 열기</MayoBtn>
-                <MayoDialog
-                    open={open}
-                    onClose={() => setOpen(false)}
-                    title="테스트 다이얼로그"
-                    footer={<MayoBtn onClick={() => setOpen(false)}>닫기</MayoBtn>}
-                >
-                    다이얼로그 테스트.
-                </MayoDialog>
-                <MayoInput size="sm" label="test" placeholder="tester" labelAlign="left" />
-                <div className="badge-group">
-                    <MayoBadge color="blue" variant="soft" iconClassName="tossface">
-                        Component
-                    </MayoBadge>
-                    <MayoBadge color="red" variant="soft" icon="🌹" iconClassName="tossface">
-                        Hot
-                    </MayoBadge>
-                    <MayoBadge color="green" variant="soft" icon="✅" iconClassName="tossface">
-                        component
-                    </MayoBadge>
-                    <MayoBadge color="purple" variant="soft" icon="⭐" iconClassName="tossface">
-                        Best
-                    </MayoBadge>
-                    <MayoBadge color="gray" variant="soft" icon="📌" iconClassName="tossface">
-                        Draft
-                    </MayoBadge>
-                </div>
-                <div className="selectTest">
-                    <MayoSelect
-                        label="과일 선택"
-                        placeholder="선택해주세요"
-                        options={playTestValue}
-                        hint="하나를 골라주세요"
-                        error={errorTest}
-                        onChange={errorTestHandler}
-                        size="sm"
-                    />
-
-                    <MayoSelect
-                        label="과일 선택"
-                        placeholder="선택해주세요"
-                        options={playTestValue}
-                        hint="하나를 골라주세요"
-                        error={errorTest}
-                        onChange={errorTestHandler}
-                        size="sm"
-                    />
-                </div>
-                <MayoBtn onClick={handleSubmit}>제출</MayoBtn>
-                <div className="selectTest">
-                    <MayoLoadingSpinner size="sm" />
-                    <MayoLoadingSpinner size="md" color="gray" label="마요 로딩 스피너 테스트.." />
-                    <MayoLoadingSpinner size="lg" color="green" />
-                </div>
-                <MayoBreadcrumb
+            <div className="app-layout">
+                <MayoSidebar
+                    activePath={window.location.pathname}
                     items={[
-                        { label: "홈", href: "/" },
-                        { label: "컴포넌트", href: "/components" },
-                        { label: "MayoBreadcrumb", href: "www.naver.com" },
+                        { label: "홈", icon: "🏠", iconClassName: "tossface", href: "/" },
+                        {
+                            label: "컴포넌트", icon: "🧩", iconClassName: "tossface",
+                            children: [
+                                { label: "버튼", href: "/components/button" },
+                                { label: "인풋", href: "/components/input" },
+                                { label: "배지", href: "/components/badge" },
+                            ],
+                        },
+                        { label: "설정", icon: "⚙️", iconClassName: "tossface", href: "/settings" },
                     ]}
                 />
-                <MayoDropdown
-                    trigger={<MayoBtn size="sm">메뉴 ▾</MayoBtn>}
-                    items={[
-                        { label: "프로필", icon: "👤", iconClassName: "tossface", onClick: () => alert("프로필") },
-                        { label: "설정", icon: "⚙️", iconClassName: "tossface", onClick: () => alert("설정") },
-                        { label: "비활성화", icon: "🚫", iconClassName: "tossface", disabled: true },
-                        { label: "로그아웃", icon: "🚪", iconClassName: "tossface", onClick: () => alert("로그아웃") },
-                    ]}
-                />
-            </section>
-
+                <section id="center">
+                    <div>
+                        <h1>ui Mayo</h1>
+                        <p>
+                            Hi <code>MayoUi</code> getStarted <code>npm install mayoui</code>
+                        </p>
+                    </div>
+                    <p>Mayo Btn Test</p>
+                    <ul>
+                        <MayoBtn onClick={() => setCount((a) => a + 1)} color="blue" size="lg">
+                            테스트
+                        </MayoBtn>
+                        <h2>{count}</h2>
+                        <MayoBtn variant="secondary">This Secondary</MayoBtn>
+                    </ul>
+                    <p>Mayo Dialog Test</p>
+                    <MayoBtn onClick={() => setOpen(true)}>다이얼로그 열기</MayoBtn>
+                    <MayoDialog
+                        open={open}
+                        onClose={() => setOpen(false)}
+                        title="테스트 다이얼로그"
+                        footer={<MayoBtn onClick={() => setOpen(false)}>닫기</MayoBtn>}
+                    >
+                        다이얼로그 테스트.
+                    </MayoDialog>
+                    <MayoInput size="sm" label="test" placeholder="tester" labelAlign="left" />
+                    <div className="badge-group">
+                        <MayoBadge color="blue" variant="soft" iconClassName="tossface">Component</MayoBadge>
+                        <MayoBadge color="red" variant="soft" icon="🌹" iconClassName="tossface">Hot</MayoBadge>
+                        <MayoBadge color="green" variant="soft" icon="✅" iconClassName="tossface">component</MayoBadge>
+                        <MayoBadge color="purple" variant="soft" icon="⭐" iconClassName="tossface">Best</MayoBadge>
+                        <MayoBadge color="gray" variant="soft" icon="📌" iconClassName="tossface">Draft</MayoBadge>
+                    </div>
+                    <div className="selectTest">
+                        <MayoSelect
+                            label="과일 선택"
+                            placeholder="선택해주세요"
+                            options={playTestValue}
+                            hint="하나를 골라주세요"
+                            error={errorTest}
+                            onChange={errorTestHandler}
+                            size="sm"
+                        />
+                        <MayoSelect
+                            label="과일 선택"
+                            placeholder="선택해주세요"
+                            options={playTestValue}
+                            hint="하나를 골라주세요"
+                            error={errorTest}
+                            onChange={errorTestHandler}
+                            size="sm"
+                        />
+                    </div>
+                    <MayoBtn onClick={handleSubmit}>제출</MayoBtn>
+                    <div className="selectTest">
+                        <MayoLoadingSpinner size="sm" />
+                        <MayoLoadingSpinner size="md" color="gray" label="마요 로딩 스피너 테스트.." />
+                        <MayoLoadingSpinner size="lg" color="green" />
+                    </div>
+                    <MayoBreadcrumb
+                        items={[
+                            { label: "홈", href: "/" },
+                            { label: "컴포넌트", href: "/components" },
+                            { label: "MayoBreadcrumb", href: "www.naver.com" },
+                        ]}
+                    />
+                    <MayoDropdown
+                        trigger={<MayoBtn size="sm">메뉴 <MdExpandMore style={{ verticalAlign: "middle" }} /></MayoBtn>}
+                        items={[
+                            { label: "프로필", icon: "👤", iconClassName: "tossface", onClick: () => alert("프로필") },
+                            { label: "설정", icon: "⚙️", iconClassName: "tossface", onClick: () => alert("설정") },
+                            { label: "비활성화", icon: "🚫", iconClassName: "tossface", disabled: true },
+                            { label: "로그아웃", icon: "🚪", iconClassName: "tossface", onClick: () => alert("로그아웃") },
+                        ]}
+                    />
+                </section>
+            </div>
             <div className="ticks"></div>
         </>
     );
