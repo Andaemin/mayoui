@@ -1,0 +1,71 @@
+.mayo-card {
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+}
+
+/* variant */
+.mayo-card--outlined {
+    border: 1px solid #e5e7eb;
+}
+
+.mayo-card--elevated {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.mayo-card--flat {
+    background: #f9fafb;
+}
+
+/* image */
+.mayo-card__image {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    display: block;
+}
+
+/* body */
+.mayo-card__body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.mayo-card--sm .mayo-card__body { padding: 12px; }
+.mayo-card--md .mayo-card__body { padding: 16px; }
+.mayo-card--lg .mayo-card__body { padding: 24px; }
+
+.mayo-card__title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #111827;
+    margin: 0;
+}
+
+.mayo-card__description {
+    font-size: 13px;
+    color: #6b7280;
+    margin: 0;
+}
+
+.mayo-card__content {
+    font-size: 14px;
+    color: #374151;
+    margin-top: 4px;
+}
+
+/* footer */
+.mayo-card__footer {
+    border-top: 1px solid #f3f4f6;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.mayo-card--sm .mayo-card__footer { padding: 10px 12px; }
+.mayo-card--md .mayo-card__footer { padding: 12px 16px; }
+.mayo-card--lg .mayo-card__footer { padding: 16px 24px; }

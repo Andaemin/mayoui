@@ -11,6 +11,9 @@ import { MayoDropdown } from "../components/MayoDropdown";
 import { MayoBreadcrumb } from "../components/MayoBreadcrumb";
 import { MayoSidebar } from "../components/MayoSidebar";
 import { MayoTextarea } from "../components/MayoTextarea";
+import { MayoToggle } from "../components/MayoToggle";
+import { MayoCheckbox } from "../components/MayoCheckbox";
+import { MayoCard } from "../components/MayoCard";
 import { MdExpandMore } from "react-icons/md";
 
 function App() {
@@ -136,6 +139,76 @@ function App() {
                         <MayoLoadingSpinner size="sm" />
                         <MayoLoadingSpinner size="md" color="gray" label="마요 로딩 스피너 테스트.." />
                         <MayoLoadingSpinner size="lg" color="green" />
+                    </div>
+                    <p>Mayo Card Test</p>
+                    <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
+                        <div style={{ width: 240 }}>
+                            <MayoCard
+                                title="Outlined 카드"
+                                description="기본 outlined 스타일"
+                                variant="outlined"
+                                footer={<MayoBtn size="sm">자세히 보기</MayoBtn>}
+                            >
+                                카드 본문 내용이 들어가는 영역입니다.
+                            </MayoCard>
+                        </div>
+                        <div style={{ width: 240 }}>
+                            <MayoCard
+                                title="Elevated 카드"
+                                description="그림자가 있는 스타일"
+                                variant="elevated"
+                                footer={<MayoBtn size="sm" variant="secondary">닫기</MayoBtn>}
+                            >
+                                카드 본문 내용이 들어가는 영역입니다.
+                            </MayoCard>
+                        </div>
+                        <div style={{ width: 240 }}>
+                            <MayoCard
+                                title="Flat 카드"
+                                description="배경색만 있는 스타일"
+                                variant="flat"
+                            >
+                                푸터 없이도 사용할 수 있어요.
+                            </MayoCard>
+                        </div>
+                    </div>
+                    <p>Mayo Toggle Test</p>
+                    <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+                        <div style={{ display: "flex", gap: 16, alignItems: "center" }}>
+                            <MayoToggle label="sm" size="sm" color="blue" />
+                            <MayoToggle label="md" size="md" color="blue" />
+                            <MayoToggle label="lg" size="lg" color="blue" />
+                        </div>
+                        <div style={{ display: "flex", gap: 16, alignItems: "center" }}>
+                            <MayoToggle label="blue" color="blue" defaultChecked />
+                            <MayoToggle label="red" color="red" defaultChecked />
+                            <MayoToggle label="green" color="green" defaultChecked />
+                            <MayoToggle label="purple" color="purple" defaultChecked />
+                            <MayoToggle label="gray" color="gray" defaultChecked />
+                        </div>
+                        <div style={{ display: "flex", gap: 16, alignItems: "center" }}>
+                            <MayoToggle label="비활성화" disabled />
+                            <MayoToggle label="비활성화 (on)" disabled defaultChecked />
+                        </div>
+                    </div>
+                    <p>Mayo Checkbox Test</p>
+                    <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+                        <div style={{ display: "flex", gap: 16, alignItems: "center" }}>
+                            <MayoCheckbox label="sm" size="sm" color="blue" />
+                            <MayoCheckbox label="md" size="md" color="blue" />
+                            <MayoCheckbox label="lg" size="lg" color="blue" />
+                        </div>
+                        <div style={{ display: "flex", gap: 16, alignItems: "center" }}>
+                            <MayoCheckbox label="blue" color="blue" defaultChecked />
+                            <MayoCheckbox label="red" color="red" defaultChecked />
+                            <MayoCheckbox label="green" color="green" defaultChecked />
+                            <MayoCheckbox label="purple" color="purple" defaultChecked />
+                            <MayoCheckbox label="gray" color="gray" defaultChecked />
+                        </div>
+                        <div style={{ display: "flex", gap: 16, alignItems: "center" }}>
+                            <MayoCheckbox label="비활성화" disabled />
+                            <MayoCheckbox label="비활성화 (on)" disabled defaultChecked />
+                        </div>
                     </div>
                     <MayoBreadcrumb
                         items={[
