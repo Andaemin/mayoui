@@ -142,35 +142,41 @@ function App() {
                     </div>
                     <p>Mayo Card Test</p>
                     <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
-                        <div style={{ width: 240 }}>
-                            <MayoCard
-                                title="Outlined 카드"
-                                description="기본 outlined 스타일"
-                                variant="outlined"
-                                footer={<MayoBtn size="sm">자세히 보기</MayoBtn>}
-                            >
-                                카드 본문 내용이 들어가는 영역입니다.
-                            </MayoCard>
-                        </div>
-                        <div style={{ width: 240 }}>
-                            <MayoCard
-                                title="Elevated 카드"
-                                description="그림자가 있는 스타일"
-                                variant="elevated"
-                                footer={<MayoBtn size="sm" variant="secondary">닫기</MayoBtn>}
-                            >
-                                카드 본문 내용이 들어가는 영역입니다.
-                            </MayoCard>
-                        </div>
-                        <div style={{ width: 240 }}>
-                            <MayoCard
-                                title="Flat 카드"
-                                description="배경색만 있는 스타일"
-                                variant="flat"
-                            >
-                                푸터 없이도 사용할 수 있어요.
-                            </MayoCard>
-                        </div>
+                        <MayoCard
+                            title="Outlined 카드"
+                            description="기본 outlined 스타일"
+                            variant="outlined"
+                            footer={<MayoBtn size="sm">자세히 보기</MayoBtn>}
+                            style={{ width: 240 }}
+                        >
+                            카드 본문 내용이 들어가는 영역입니다.
+                        </MayoCard>
+                        <MayoCard
+                            title="Elevated 카드"
+                            description="그림자가 있는 스타일"
+                            variant="elevated"
+                            footer={<MayoBtn size="sm" variant="secondary">닫기</MayoBtn>}
+                            style={{ width: 240 }}
+                        >
+                            카드 본문 내용이 들어가는 영역입니다.
+                        </MayoCard>
+                        <MayoCard
+                            title="Flat 카드"
+                            description="배경색만 있는 스타일"
+                            variant="flat"
+                            style={{ width: 240 }}
+                        >
+                            푸터 없이도 사용할 수 있어요.
+                        </MayoCard>
+                        <MayoCard
+                            title="클릭 가능한 카드"
+                            description="onClick 전달 시 cursor: pointer"
+                            variant="outlined"
+                            style={{ width: 240 }}
+                            onClick={() => alert("카드 클릭!")}
+                        >
+                            클릭해보세요.
+                        </MayoCard>
                     </div>
                     <p>Mayo Toggle Test</p>
                     <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>

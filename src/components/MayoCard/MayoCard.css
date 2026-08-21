@@ -9,14 +9,36 @@
 /* variant */
 .mayo-card--outlined {
     border: 1px solid #e5e7eb;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.mayo-card--outlined:hover {
+    border-color: #d1d5db;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 
 .mayo-card--elevated {
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.mayo-card--elevated:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.13);
+    transform: translateY(-2px);
 }
 
 .mayo-card--flat {
     background: #f9fafb;
+    transition: background 0.15s ease;
+}
+
+.mayo-card--flat:hover {
+    background: #f3f4f6;
+}
+
+/* clickable */
+.mayo-card--clickable {
+    cursor: pointer;
 }
 
 /* image */
