@@ -140,42 +140,82 @@ function App() {
                         <MayoLoadingSpinner size="md" color="gray" label="마요 로딩 스피너 테스트.." />
                         <MayoLoadingSpinner size="lg" color="green" />
                     </div>
-                    <p>Mayo Card Test</p>
-                    <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
+                    <p>Mayo Card Test — variant</p>
+                    <div style={{ display: "flex", gap: 16, flexWrap: "wrap", alignItems: "flex-start" }}>
                         <MayoCard
-                            title="Outlined 카드"
-                            description="기본 outlined 스타일"
+                            title="Outlined"
+                            description="기본 테두리 스타일"
                             variant="outlined"
-                            footer={<MayoBtn size="sm">자세히 보기</MayoBtn>}
-                            style={{ width: 240 }}
+                            footer={
+                                <>
+                                    <MayoBtn size="sm">확인</MayoBtn>
+                                    <MayoBtn size="sm" variant="secondary">취소</MayoBtn>
+                                </>
+                            }
+                            style={{ width: 220 }}
                         >
-                            카드 본문 내용이 들어가는 영역입니다.
+                            hover 시 테두리와 그림자가 강조됩니다.
                         </MayoCard>
                         <MayoCard
-                            title="Elevated 카드"
-                            description="그림자가 있는 스타일"
+                            title="Elevated"
+                            description="그림자 스타일"
                             variant="elevated"
-                            footer={<MayoBtn size="sm" variant="secondary">닫기</MayoBtn>}
-                            style={{ width: 240 }}
+                            footer={<MayoBtn size="sm" variant="secondary">더보기</MayoBtn>}
+                            style={{ width: 220 }}
                         >
-                            카드 본문 내용이 들어가는 영역입니다.
+                            hover 시 위로 살짝 떠오릅니다.
                         </MayoCard>
                         <MayoCard
-                            title="Flat 카드"
-                            description="배경색만 있는 스타일"
+                            title="Flat"
+                            description="배경색 스타일"
                             variant="flat"
-                            style={{ width: 240 }}
+                            style={{ width: 220 }}
                         >
-                            푸터 없이도 사용할 수 있어요.
+                            푸터 없이 콘텐츠만 담을 때 사용해요.
                         </MayoCard>
                         <MayoCard
-                            title="클릭 가능한 카드"
-                            description="onClick 전달 시 cursor: pointer"
+                            title="클릭 가능"
+                            description="onClick 전달 시 자동으로 포인터"
                             variant="outlined"
-                            style={{ width: 240 }}
+                            style={{ width: 220 }}
                             onClick={() => alert("카드 클릭!")}
                         >
-                            클릭해보세요.
+                            카드 전체가 버튼처럼 동작합니다.
+                        </MayoCard>
+                    </div>
+                    <p>Mayo Card Test — padding</p>
+                    <div style={{ display: "flex", gap: 16, flexWrap: "wrap", alignItems: "flex-start" }}>
+                        <MayoCard title="padding sm" description="작은 여백" variant="outlined" padding="sm" style={{ width: 180 }}>
+                            sm 패딩 카드
+                        </MayoCard>
+                        <MayoCard title="padding md" description="기본 여백" variant="outlined" padding="md" style={{ width: 180 }}>
+                            md 패딩 카드
+                        </MayoCard>
+                        <MayoCard title="padding lg" description="넓은 여백" variant="outlined" padding="lg" style={{ width: 180 }}>
+                            lg 패딩 카드
+                        </MayoCard>
+                    </div>
+                    <p>Mayo Card Test — image</p>
+                    <div style={{ display: "flex", gap: 16, flexWrap: "wrap", alignItems: "flex-start" }}>
+                        <MayoCard
+                            title="이미지 카드"
+                            description="image prop으로 상단 이미지 삽입"
+                            variant="outlined"
+                            image="https://picsum.photos/seed/mayo1/400/225"
+                            footer={<MayoBtn size="sm">자세히 보기</MayoBtn>}
+                            style={{ width: 260 }}
+                        >
+                            16:9 비율로 자동 크롭됩니다.
+                        </MayoCard>
+                        <MayoCard
+                            title="이미지 + Elevated"
+                            description="그림자와 이미지 조합"
+                            variant="elevated"
+                            image="https://picsum.photos/seed/mayo2/400/225"
+                            footer={<MayoBtn size="sm" variant="secondary">닫기</MayoBtn>}
+                            style={{ width: 260 }}
+                        >
+                            hover 시 위로 떠오릅니다.
                         </MayoCard>
                     </div>
                     <p>Mayo Toggle Test</p>
