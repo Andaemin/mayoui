@@ -1,0 +1,75 @@
+.mayo-alert {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 12px 16px;
+    border-radius: 8px;
+    border-left: 4px solid transparent;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.mayo-alert__icon {
+    flex-shrink: 0;
+    font-size: 16px;
+    margin-top: 1px;
+}
+
+.mayo-alert__body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.mayo-alert__title {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.mayo-alert__message {
+    font-size: 13px;
+    opacity: 0.85;
+}
+
+.mayo-alert__close {
+    flex-shrink: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 1;
+    padding: 0;
+    opacity: 0.5;
+    transition: opacity 0.15s ease;
+    color: inherit;
+}
+
+.mayo-alert__close:hover {
+    opacity: 1;
+}
+
+/* type */
+.mayo-alert--info {
+    background: #eff6ff;
+    border-color: #3b82f6;
+    color: #1e40af;
+}
+
+.mayo-alert--success {
+    background: #f0fdf4;
+    border-color: #36d399;
+    color: #166534;
+}
+
+.mayo-alert--warning {
+    background: #fffbeb;
+    border-color: #f59e0b;
+    color: #92400e;
+}
+
+.mayo-alert--error {
+    background: #fef2f2;
+    border-color: #f87272;
+    color: #991b1b;
+}

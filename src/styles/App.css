@@ -2,6 +2,20 @@
     font-family: "TossFace", sans-serif;
 }
 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+    font-size: inherit;
+}
+
 .counter {
     font-size: 16px;
     padding: 5px 10px;

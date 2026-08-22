@@ -1,0 +1,47 @@
+.mayo-progress {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+}
+
+.mayo-progress__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mayo-progress__label {
+    font-size: 13px;
+    color: #374151;
+}
+
+.mayo-progress__value {
+    font-size: 12px;
+    color: #6b7280;
+}
+
+.mayo-progress__track {
+    width: 100%;
+    background: #e5e7eb;
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+/* size */
+.mayo-progress--sm .mayo-progress__track { height: 4px; }
+.mayo-progress--md .mayo-progress__track { height: 8px; }
+.mayo-progress--lg .mayo-progress__track { height: 12px; }
+
+.mayo-progress__bar {
+    height: 100%;
+    border-radius: 999px;
+    transition: width 0.3s ease;
+}
+
+/* color */
+.mayo-progress--blue   .mayo-progress__bar { background: #3abff8; }
+.mayo-progress--red    .mayo-progress__bar { background: #f87272; }
+.mayo-progress--green  .mayo-progress__bar { background: #36d399; }
+.mayo-progress--purple .mayo-progress__bar { background: #a855f7; }
+.mayo-progress--gray   .mayo-progress__bar { background: #6b7280; }

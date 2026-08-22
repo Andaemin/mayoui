@@ -13,7 +13,10 @@ import { MayoSidebar } from "../components/MayoSidebar";
 import { MayoTextarea } from "../components/MayoTextarea";
 import { MayoToggle } from "../components/MayoToggle";
 import { MayoCheckbox } from "../components/MayoCheckbox";
+import { MayoAlert } from "../components/MayoAlert";
 import { MayoCard } from "../components/MayoCard";
+import { MayoRadio } from "../components/MayoRadio";
+import { MayoProgress } from "../components/MayoProgress";
 import { MdExpandMore } from "react-icons/md";
 
 function App() {
@@ -217,6 +220,43 @@ function App() {
                         >
                             hover 시 위로 떠오릅니다.
                         </MayoCard>
+                    </div>
+                    <p>Mayo Alert Test</p>
+                    <div style={{ display: "flex", flexDirection: "column", gap: 10, maxWidth: 480 }}>
+                        <MayoAlert type="info" title="안내" iconClassName="tossface">업데이트가 있습니다. 확인해주세요.</MayoAlert>
+                        <MayoAlert type="success" title="성공" iconClassName="tossface">저장이 완료되었습니다.</MayoAlert>
+                        <MayoAlert type="warning" title="경고" iconClassName="tossface">저장되지 않은 변경사항이 있습니다.</MayoAlert>
+                        <MayoAlert type="error" title="오류" iconClassName="tossface">요청을 처리하는 중 문제가 발생했습니다.</MayoAlert>
+                        <MayoAlert type="info" iconClassName="tossface" onClose={() => alert("닫기 클릭")}>제목 없이 메시지만 표시할 수도 있어요.</MayoAlert>
+                    </div>
+                    <p>Mayo Radio Test</p>
+                    <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+                        <div style={{ display: "flex", gap: 16, alignItems: "center" }}>
+                            <MayoRadio name="fruit" value="apple" label="사과" color="blue" defaultChecked />
+                            <MayoRadio name="fruit" value="banana" label="바나나" color="blue" />
+                            <MayoRadio name="fruit" value="grape" label="포도" color="blue" />
+                        </div>
+                        <div style={{ display: "flex", gap: 16, alignItems: "center" }}>
+                            <MayoRadio name="color" value="blue" label="blue" color="blue" defaultChecked size="md" />
+                            <MayoRadio name="color" value="red" label="red" color="red" defaultChecked size="md" />
+                            <MayoRadio name="color" value="green" label="green" color="green" defaultChecked size="md" />
+                            <MayoRadio name="color" value="purple" label="purple" color="purple" defaultChecked size="md" />
+                            <MayoRadio name="color" value="gray" label="gray" color="gray" defaultChecked size="md" />
+                        </div>
+                        <div style={{ display: "flex", gap: 16, alignItems: "center" }}>
+                            <MayoRadio name="size" value="sm" label="sm" size="sm" />
+                            <MayoRadio name="size" value="md" label="md" size="md" />
+                            <MayoRadio name="size" value="lg" label="lg" size="lg" />
+                            <MayoRadio name="disabled" value="off" label="비활성화" disabled />
+                        </div>
+                    </div>
+                    <p>Mayo Progress Test</p>
+                    <div style={{ display: "flex", flexDirection: "column", gap: 12, maxWidth: 400 }}>
+                        <MayoProgress value={30} label="업로드 중..." showValue color="blue" size="sm" />
+                        <MayoProgress value={60} label="처리 중..." showValue color="green" size="md" />
+                        <MayoProgress value={85} label="거의 완료..." showValue color="purple" size="lg" />
+                        <MayoProgress value={100} label="완료" showValue color="gray" />
+                        <MayoProgress value={45} color="red" showValue />
                     </div>
                     <p>Mayo Toggle Test</p>
                     <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
