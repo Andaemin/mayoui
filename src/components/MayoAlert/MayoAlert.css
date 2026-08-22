@@ -1,35 +1,28 @@
 .mayo-alert {
     display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    padding: 12px 16px;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
     border-radius: 8px;
-    border-left: 4px solid transparent;
-    font-size: 14px;
-    line-height: 1.5;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.4;
 }
 
 .mayo-alert__icon {
     flex-shrink: 0;
-    font-size: 16px;
-    margin-top: 1px;
-}
-
-.mayo-alert__body {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
+    font-size: 14px;
 }
 
 .mayo-alert__title {
     font-weight: 600;
-    font-size: 14px;
+    margin-right: 4px;
 }
 
 .mayo-alert__message {
-    font-size: 13px;
-    opacity: 0.85;
+    flex: 1;
+    color: inherit;
+    opacity: 0.8;
 }
 
 .mayo-alert__close {
@@ -37,39 +30,20 @@
     background: none;
     border: none;
     cursor: pointer;
-    font-size: 16px;
-    line-height: 1;
+    font-size: 13px;
     padding: 0;
-    opacity: 0.5;
+    opacity: 0.4;
     transition: opacity 0.15s ease;
     color: inherit;
+    margin-left: 4px;
 }
 
 .mayo-alert__close:hover {
-    opacity: 1;
+    opacity: 0.8;
 }
 
 /* type */
-.mayo-alert--info {
-    background: #eff6ff;
-    border-color: #3b82f6;
-    color: #1e40af;
-}
-
-.mayo-alert--success {
-    background: #f0fdf4;
-    border-color: #36d399;
-    color: #166534;
-}
-
-.mayo-alert--warning {
-    background: #fffbeb;
-    border-color: #f59e0b;
-    color: #92400e;
-}
-
-.mayo-alert--error {
-    background: #fef2f2;
-    border-color: #f87272;
-    color: #991b1b;
-}
+.mayo-alert--info    { background: #f5faff; color: #1e40af; }
+.mayo-alert--success { background: #f5fdf8; color: #065f46; }
+.mayo-alert--warning { background: #fffdf5; color: #92400e; }
+.mayo-alert--error   { background: #fff5f5; color: #991b1b; }
