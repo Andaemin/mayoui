@@ -14,6 +14,7 @@ import { MayoTextarea } from "../components/MayoTextarea";
 import { MayoToggle } from "../components/MayoToggle";
 import { MayoCheckbox } from "../components/MayoCheckbox";
 import { MayoAlert } from "../components/MayoAlert";
+import { MayoTabs } from "../components/MayoTabs";
 import { MayoCard } from "../components/MayoCard";
 import { MayoRadio } from "../components/MayoRadio";
 import { MayoProgress } from "../components/MayoProgress";
@@ -220,6 +221,30 @@ function App() {
                         >
                             hover 시 위로 떠오릅니다.
                         </MayoCard>
+                    </div>
+                    <p>Mayo Tabs Test</p>
+                    <div style={{ display: "flex", flexDirection: "column", gap: 24, width: "100%", maxWidth: 480 }}>
+                        <MayoTabs
+                            defaultValue="btn"
+                            variant="line"
+                            color="blue"
+                            tabs={[
+                                { value: "btn", label: "버튼", children: <span>MayoBtn 컴포넌트 내용</span> },
+                                { value: "input", label: "인풋", children: <span>MayoInput 컴포넌트 내용</span> },
+                                { value: "badge", label: "배지", children: <span>MayoBadge 컴포넌트 내용</span> },
+                                { value: "disabled", label: "비활성화", disabled: true },
+                            ]}
+                        />
+                        <MayoTabs
+                            defaultValue="btn"
+                            variant="pill"
+                            color="purple"
+                            tabs={[
+                                { value: "btn", label: "버튼", children: <span>MayoBtn 컴포넌트 내용</span> },
+                                { value: "input", label: "인풋", children: <span>MayoInput 컴포넌트 내용</span> },
+                                { value: "badge", label: "배지", children: <span>MayoBadge 컴포넌트 내용</span> },
+                            ]}
+                        />
                     </div>
                     <p>Mayo Alert Test</p>
                     <div style={{ display: "flex", flexDirection: "column", gap: 10, maxWidth: 480 }}>

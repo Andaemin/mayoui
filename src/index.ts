@@ -16,4 +16,5 @@ export * from "./components/MayoInput";
 export * from "./components/MayoSelect";
 export * from "./components/MayoSidebar";
 export * from "./components/MayoTextarea";
+export * from "./components/MayoTabs";
 export * from "./components/MayoToast";

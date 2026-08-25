@@ -1,0 +1,86 @@
+.mayo-tabs {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* tab list */
+.mayo-tabs__list {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+/* line variant */
+.mayo-tabs--line .mayo-tabs__list {
+    border-bottom: 2px solid #e5e7eb;
+    gap: 0;
+}
+
+.mayo-tabs--line .mayo-tabs__tab {
+    padding: 8px 16px;
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #6b7280;
+    cursor: pointer;
+    transition: color 0.15s ease, border-color 0.15s ease;
+    white-space: nowrap;
+}
+
+.mayo-tabs--line .mayo-tabs__tab:hover:not(:disabled) {
+    color: #374151;
+}
+
+.mayo-tabs--line .mayo-tabs__tab--active.mayo-tabs--blue   { color: #3abff8; border-color: #3abff8; }
+.mayo-tabs--line .mayo-tabs__tab--active.mayo-tabs--red    { color: #f87272; border-color: #f87272; }
+.mayo-tabs--line .mayo-tabs__tab--active.mayo-tabs--green  { color: #36d399; border-color: #36d399; }
+.mayo-tabs--line .mayo-tabs__tab--active.mayo-tabs--purple { color: #a855f7; border-color: #a855f7; }
+.mayo-tabs--line .mayo-tabs__tab--active.mayo-tabs--gray   { color: #6b7280; border-color: #6b7280; }
+
+/* pill variant */
+.mayo-tabs--pill .mayo-tabs__list {
+    background: #f3f4f6;
+    border-radius: 8px;
+    padding: 4px;
+}
+
+.mayo-tabs--pill .mayo-tabs__tab {
+    padding: 6px 16px;
+    background: none;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #6b7280;
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease;
+    white-space: nowrap;
+}
+
+.mayo-tabs--pill .mayo-tabs__tab:hover:not(:disabled) {
+    background: #e5e7eb;
+    color: #374151;
+}
+
+.mayo-tabs--pill .mayo-tabs__tab--active.mayo-tabs--blue   { background: #3abff8; color: #fff; }
+.mayo-tabs--pill .mayo-tabs__tab--active.mayo-tabs--red    { background: #f87272; color: #fff; }
+.mayo-tabs--pill .mayo-tabs__tab--active.mayo-tabs--green  { background: #36d399; color: #fff; }
+.mayo-tabs--pill .mayo-tabs__tab--active.mayo-tabs--purple { background: #a855f7; color: #fff; }
+.mayo-tabs--pill .mayo-tabs__tab--active.mayo-tabs--gray   { background: #6b7280; color: #fff; }
+
+/* disabled */
+.mayo-tabs__tab:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+/* content */
+.mayo-tabs__content {
+    padding: 16px 0;
+    font-size: 14px;
+    color: #374151;
+}
