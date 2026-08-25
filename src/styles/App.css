@@ -1,3 +1,5 @@
+@import "./mayo-theme.css";
+
 .tossface {
     font-family: "TossFace", sans-serif;
 }
@@ -76,6 +78,14 @@ textarea {
     display: flex;
     flex: 1;
     min-height: 0;
+    background: var(--mayo-bg);
+    transition: background 0.2s ease;
+}
+
+#center {
+    background: var(--mayo-bg);
+    color: var(--mayo-text);
+    transition: background 0.2s ease, color 0.2s ease;
 }
 
 .badge-group {

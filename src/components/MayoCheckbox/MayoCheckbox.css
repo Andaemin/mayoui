@@ -6,21 +6,15 @@
     user-select: none;
 }
 
-.mayo-checkbox-wrapper--disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-}
-
-.mayo-checkbox__input {
-    display: none;
-}
+.mayo-checkbox-wrapper--disabled { opacity: 0.5; cursor: not-allowed; }
+.mayo-checkbox__input { display: none; }
 
 .mayo-checkbox {
     position: relative;
     display: inline-block;
     border-radius: 4px;
-    border: 2px solid #d1d5db;
-    background: #fff;
+    border: 2px solid var(--mayo-border-strong);
+    background: var(--mayo-bg);
     transition: background 0.15s ease, border-color 0.15s ease;
     flex-shrink: 0;
 }
@@ -40,10 +34,8 @@
 /* size */
 .mayo-checkbox--sm { width: 14px; height: 14px; }
 .mayo-checkbox--sm::after { width: 4px; height: 7px; }
-
 .mayo-checkbox--md { width: 18px; height: 18px; }
 .mayo-checkbox--md::after { width: 5px; height: 9px; }
-
 .mayo-checkbox--lg { width: 22px; height: 22px; }
 .mayo-checkbox--lg::after { width: 6px; height: 11px; }
 
@@ -53,12 +45,6 @@
 .mayo-checkbox__input:checked + .mayo-checkbox--green  { background: #36d399; border-color: #36d399; }
 .mayo-checkbox__input:checked + .mayo-checkbox--purple { background: #a855f7; border-color: #a855f7; }
 .mayo-checkbox__input:checked + .mayo-checkbox--gray   { background: #6b7280; border-color: #6b7280; }
+.mayo-checkbox__input:checked + .mayo-checkbox::after  { display: block; }
 
-.mayo-checkbox__input:checked + .mayo-checkbox::after {
-    display: block;
-}
-
-.mayo-checkbox__label {
-    font-size: 14px;
-    color: #374151;
-}
+.mayo-checkbox__label { font-size: 14px; color: var(--mayo-text-secondary); }

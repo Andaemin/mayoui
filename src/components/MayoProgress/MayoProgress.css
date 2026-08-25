@@ -11,19 +11,12 @@
     align-items: center;
 }
 
-.mayo-progress__label {
-    font-size: 13px;
-    color: #374151;
-}
-
-.mayo-progress__value {
-    font-size: 12px;
-    color: #6b7280;
-}
+.mayo-progress__label { font-size: 13px; color: var(--mayo-text-secondary); }
+.mayo-progress__value { font-size: 12px; color: var(--mayo-text-muted); }
 
 .mayo-progress__track {
     width: 100%;
-    background: #e5e7eb;
+    background: var(--mayo-bg-muted);
     border-radius: 999px;
     overflow: hidden;
 }

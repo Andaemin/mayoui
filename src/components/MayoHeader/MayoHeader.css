@@ -4,9 +4,11 @@
     align-items: center;
     padding: 0 24px;
     height: 64px;
-    background: transparent;
+    background: var(--mayo-bg);
+    color: var(--mayo-text);
     width: 100%;
     box-sizing: border-box;
+    transition: background 0.2s ease, color 0.2s ease;
 }
 
 .mayo-header__left {
@@ -37,5 +39,5 @@
     gap: 4px;
     margin-left: 16px;
     padding-left: 16px;
-    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    border-left: 1px solid var(--mayo-border);
 }

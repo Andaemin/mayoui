@@ -6,21 +6,15 @@
     user-select: none;
 }
 
-.mayo-radio-wrapper--disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-}
-
-.mayo-radio__input {
-    display: none;
-}
+.mayo-radio-wrapper--disabled { opacity: 0.5; cursor: not-allowed; }
+.mayo-radio__input { display: none; }
 
 .mayo-radio {
     position: relative;
     display: inline-block;
     border-radius: 50%;
-    border: 2px solid #d1d5db;
-    background: #fff;
+    border: 2px solid var(--mayo-border-strong);
+    background: var(--mayo-bg);
     transition: border-color 0.15s ease;
     flex-shrink: 0;
 }
@@ -39,10 +33,8 @@
 /* size */
 .mayo-radio--sm { width: 14px; height: 14px; }
 .mayo-radio--sm::after { width: 5px; height: 5px; }
-
 .mayo-radio--md { width: 18px; height: 18px; }
 .mayo-radio--md::after { width: 7px; height: 7px; }
-
 .mayo-radio--lg { width: 22px; height: 22px; }
 .mayo-radio--lg::after { width: 9px; height: 9px; }
 
@@ -52,12 +44,6 @@
 .mayo-radio__input:checked + .mayo-radio--green  { background: #36d399; border-color: #36d399; }
 .mayo-radio__input:checked + .mayo-radio--purple { background: #a855f7; border-color: #a855f7; }
 .mayo-radio__input:checked + .mayo-radio--gray   { background: #6b7280; border-color: #6b7280; }
+.mayo-radio__input:checked + .mayo-radio::after  { transform: translate(-50%, -50%) scale(1); }
 
-.mayo-radio__input:checked + .mayo-radio::after {
-    transform: translate(-50%, -50%) scale(1);
-}
-
-.mayo-radio__label {
-    font-size: 14px;
-    color: #374151;
-}
+.mayo-radio__label { font-size: 14px; color: var(--mayo-text-secondary); }

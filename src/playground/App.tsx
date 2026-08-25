@@ -25,6 +25,11 @@ import { MdExpandMore } from "react-icons/md";
 
 function App() {
     const [dark, setDark] = useState(false);
+    const toggleDark = () => {
+        const next = !dark;
+        setDark(next);
+        document.documentElement.setAttribute("data-theme", next ? "dark" : "light");
+    };
     const [count, setCount] = useState(0);
     const [open, setOpen] = useState(false);
     const playTestValue = [
@@ -60,7 +65,7 @@ function App() {
                 }
                 actions={
                     <>
-                        <MayoBtn size="sm" variant="secondary" onClick={() => setDark((d) => !d)}>
+                        <MayoBtn size="sm" variant="secondary" onClick={toggleDark}>
                             {dark ? "☀️ Light" : "🌙 Dark"}
                         </MayoBtn>
                         <MayoBtn size="sm">로그인</MayoBtn>
@@ -85,11 +90,7 @@ function App() {
                         { label: "설정", icon: "⚙️", iconClassName: "tossface", href: "/settings" },
                     ]}
                 />
-                <section id="center" style={{
-                    background: dark ? "#111827" : "#ffffff",
-                    color: dark ? "#f9fafb" : "#111827",
-                    transition: "background 0.2s ease, color 0.2s ease",
-                }}>
+                <section id="center">
                     <div>
                         <h1>ui Mayo</h1>
                         <p>
