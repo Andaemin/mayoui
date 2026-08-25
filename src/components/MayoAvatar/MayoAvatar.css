@@ -4,10 +4,8 @@
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    background: var(--mayo-bg-muted);
     color: var(--mayo-text-muted);
     font-weight: 600;
-    overflow: hidden;
     user-select: none;
 }
 
@@ -21,6 +19,20 @@
 .mayo-avatar--md { width: 40px;  height: 40px;  font-size: 14px; }
 .mayo-avatar--lg { width: 52px;  height: 52px;  font-size: 18px; }
 .mayo-avatar--xl { width: 64px;  height: 64px;  font-size: 22px; }
+
+/* inner — 이미지/이니셜 클리핑용 */
+.mayo-avatar__inner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--mayo-bg-muted);
+    overflow: hidden;
+}
+
+.mayo-avatar--circle .mayo-avatar__inner { border-radius: 50%; }
+.mayo-avatar--square .mayo-avatar__inner { border-radius: 20%; }
 
 /* image */
 .mayo-avatar__img {
