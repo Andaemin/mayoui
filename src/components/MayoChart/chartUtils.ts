@@ -1,14 +1,14 @@
 export const CHART_COLORS: Record<string, string> = {
-    blue: "#5b8dee",
-    red: "#e05c6a",
-    green: "#3dab7a",
-    purple: "#8b6cd8",
-    gray: "#7c8b9e",
-    orange: "#d97b4a",
-    yellow: "#c9a227",
-    pink: "#c2608e",
-    teal: "#3a9fa8",
-    indigo: "#6670c4",
+    blue: "#3abff8",
+    red: "#f87272",
+    green: "#36d399",
+    purple: "#a855f7",
+    gray: "#6b7280",
+    orange: "#fb923c",
+    yellow: "#fbbf24",
+    pink: "#f472b6",
+    teal: "#2dd4bf",
+    indigo: "#818cf8",
 };
 
 export function resolveColor(color?: string): string {
