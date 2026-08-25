@@ -30,55 +30,35 @@
 }
 
 /* solid */
-.mayo-badge--solid.mayo-badge--blue {
-    background: #3abff8;
-    color: #fff;
-    border: none;
-}
-.mayo-badge--solid.mayo-badge--red {
-    background: #f87272;
-    color: #fff;
-    border: none;
-}
-.mayo-badge--solid.mayo-badge--green {
-    background: #36d399;
-    color: #fff;
-    border: none;
-}
-.mayo-badge--solid.mayo-badge--purple {
-    background: #a855f7;
-    color: #fff;
-    border: none;
-}
-.mayo-badge--solid.mayo-badge--gray {
-    background: #9ca3af;
-    color: #fff;
-    border: none;
-}
+.mayo-badge--solid.mayo-badge--blue   { background: var(--mayo-badge-blue-solid-bg);   color: #fff; border: none; }
+.mayo-badge--solid.mayo-badge--red    { background: var(--mayo-badge-red-solid-bg);    color: #fff; border: none; }
+.mayo-badge--solid.mayo-badge--green  { background: var(--mayo-badge-green-solid-bg);  color: #fff; border: none; }
+.mayo-badge--solid.mayo-badge--purple { background: var(--mayo-badge-purple-solid-bg); color: #fff; border: none; }
+.mayo-badge--solid.mayo-badge--gray   { background: var(--mayo-badge-gray-solid-bg);   color: #fff; border: none; }
 
 /* soft */
 .mayo-badge--soft.mayo-badge--blue {
-    background: #edfafd;
-    color: #0891b2;
-    border: 1px solid #a5e6f7;
+    background: var(--mayo-badge-blue-soft-bg);
+    color: var(--mayo-badge-blue-soft-text);
+    border: 1px solid var(--mayo-badge-blue-soft-border);
 }
 .mayo-badge--soft.mayo-badge--red {
-    background: #fffbfb;
-    color: #dc2626;
-    border: 1px solid #fbb6b6;
+    background: var(--mayo-badge-red-soft-bg);
+    color: var(--mayo-badge-red-soft-text);
+    border: 1px solid var(--mayo-badge-red-soft-border);
 }
 .mayo-badge--soft.mayo-badge--green {
-    background: #f4fff9;
-    color: #059669;
-    border: 1px solid #6ee7b7;
+    background: var(--mayo-badge-green-soft-bg);
+    color: var(--mayo-badge-green-soft-text);
+    border: 1px solid var(--mayo-badge-green-soft-border);
 }
 .mayo-badge--soft.mayo-badge--purple {
-    background: #f9f7ff;
-    color: #b99fe6;
-    border: 1px solid #e9e4ff;
+    background: var(--mayo-badge-purple-soft-bg);
+    color: var(--mayo-badge-purple-soft-text);
+    border: 1px solid var(--mayo-badge-purple-soft-border);
 }
 .mayo-badge--soft.mayo-badge--gray {
-    background: #fafbff;
-    color: #565f6d;
-    border: 1px solid #d9e8ff;
+    background: var(--mayo-badge-gray-soft-bg);
+    color: var(--mayo-badge-gray-soft-text);
+    border: 1px solid var(--mayo-badge-gray-soft-border);
 }

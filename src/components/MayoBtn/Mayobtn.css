@@ -22,38 +22,38 @@
 .mayo-btn--2xl { padding: 16px 26px; font-size: 24px; border-radius: 20px; }
 
 /* primary */
-.mayo-btn--primary.mayo-btn--blue   { background: #2e8af2; color: #fff; }
-.mayo-btn--primary.mayo-btn--blue:hover:not(:disabled)   { background: #1d4ed8; }
-.mayo-btn--primary.mayo-btn--red    { background: #ef4444; color: #fff; }
-.mayo-btn--primary.mayo-btn--red:hover:not(:disabled)    { background: #dc2626; }
-.mayo-btn--primary.mayo-btn--green  { background: #16a34a; color: #fff; }
-.mayo-btn--primary.mayo-btn--green:hover:not(:disabled)  { background: #15803d; }
-.mayo-btn--primary.mayo-btn--purple { background: #7c3aed; color: #fff; }
-.mayo-btn--primary.mayo-btn--purple:hover:not(:disabled) { background: #6d28d9; }
-.mayo-btn--primary.mayo-btn--gray   { background: #374151; color: #fff; }
-.mayo-btn--primary.mayo-btn--gray:hover:not(:disabled)   { background: #1f2937; }
+.mayo-btn--primary.mayo-btn--blue   { background: var(--mayo-btn-blue);   color: #fff; }
+.mayo-btn--primary.mayo-btn--blue:hover:not(:disabled)   { background: var(--mayo-btn-blue-hover); }
+.mayo-btn--primary.mayo-btn--red    { background: var(--mayo-btn-red);    color: #fff; }
+.mayo-btn--primary.mayo-btn--red:hover:not(:disabled)    { background: var(--mayo-btn-red-hover); }
+.mayo-btn--primary.mayo-btn--green  { background: var(--mayo-btn-green);  color: #fff; }
+.mayo-btn--primary.mayo-btn--green:hover:not(:disabled)  { background: var(--mayo-btn-green-hover); }
+.mayo-btn--primary.mayo-btn--purple { background: var(--mayo-btn-purple); color: #fff; }
+.mayo-btn--primary.mayo-btn--purple:hover:not(:disabled) { background: var(--mayo-btn-purple-hover); }
+.mayo-btn--primary.mayo-btn--gray   { background: var(--mayo-btn-gray);   color: #fff; }
+.mayo-btn--primary.mayo-btn--gray:hover:not(:disabled)   { background: var(--mayo-btn-gray-hover); }
 
 /* secondary */
-.mayo-btn--secondary.mayo-btn--blue   { background: #dbeafe; color: #1d4ed8; }
-.mayo-btn--secondary.mayo-btn--blue:hover:not(:disabled)   { background: #bfdbfe; }
-.mayo-btn--secondary.mayo-btn--red    { background: #fee2e2; color: #dc2626; }
-.mayo-btn--secondary.mayo-btn--red:hover:not(:disabled)    { background: #fecaca; }
-.mayo-btn--secondary.mayo-btn--green  { background: #dcfce7; color: #15803d; }
-.mayo-btn--secondary.mayo-btn--green:hover:not(:disabled)  { background: #bbf7d0; }
-.mayo-btn--secondary.mayo-btn--purple { background: #ede9fe; color: #6d28d9; }
-.mayo-btn--secondary.mayo-btn--purple:hover:not(:disabled) { background: #ddd6fe; }
+.mayo-btn--secondary.mayo-btn--blue   { background: var(--mayo-btn-sec-blue-bg);   color: var(--mayo-btn-sec-blue-text); }
+.mayo-btn--secondary.mayo-btn--blue:hover:not(:disabled)   { background: var(--mayo-btn-sec-blue-hover); }
+.mayo-btn--secondary.mayo-btn--red    { background: var(--mayo-btn-sec-red-bg);    color: var(--mayo-btn-sec-red-text); }
+.mayo-btn--secondary.mayo-btn--red:hover:not(:disabled)    { background: var(--mayo-btn-sec-red-hover); }
+.mayo-btn--secondary.mayo-btn--green  { background: var(--mayo-btn-sec-green-bg);  color: var(--mayo-btn-sec-green-text); }
+.mayo-btn--secondary.mayo-btn--green:hover:not(:disabled)  { background: var(--mayo-btn-sec-green-hover); }
+.mayo-btn--secondary.mayo-btn--purple { background: var(--mayo-btn-sec-purple-bg); color: var(--mayo-btn-sec-purple-text); }
+.mayo-btn--secondary.mayo-btn--purple:hover:not(:disabled) { background: var(--mayo-btn-sec-purple-hover); }
 .mayo-btn--secondary.mayo-btn--gray   { background: var(--mayo-bg-muted); color: var(--mayo-text-secondary); }
 .mayo-btn--secondary.mayo-btn--gray:hover:not(:disabled)   { background: var(--mayo-border); }
 
 /* ghost */
 .mayo-btn--ghost { background: transparent; }
-.mayo-btn--ghost.mayo-btn--blue   { color: #2563eb; }
-.mayo-btn--ghost.mayo-btn--blue:hover:not(:disabled)   { background: rgba(37, 99, 235, 0.08); }
-.mayo-btn--ghost.mayo-btn--red    { color: #dc2626; }
-.mayo-btn--ghost.mayo-btn--red:hover:not(:disabled)    { background: rgba(220, 38, 38, 0.08); }
-.mayo-btn--ghost.mayo-btn--green  { color: #15803d; }
-.mayo-btn--ghost.mayo-btn--green:hover:not(:disabled)  { background: rgba(21, 128, 61, 0.08); }
-.mayo-btn--ghost.mayo-btn--purple { color: #6d28d9; }
-.mayo-btn--ghost.mayo-btn--purple:hover:not(:disabled) { background: rgba(109, 40, 217, 0.08); }
+.mayo-btn--ghost.mayo-btn--blue   { color: var(--mayo-btn-ghost-blue); }
+.mayo-btn--ghost.mayo-btn--blue:hover:not(:disabled)   { background: var(--mayo-btn-ghost-blue-hover); }
+.mayo-btn--ghost.mayo-btn--red    { color: var(--mayo-btn-ghost-red); }
+.mayo-btn--ghost.mayo-btn--red:hover:not(:disabled)    { background: var(--mayo-btn-ghost-red-hover); }
+.mayo-btn--ghost.mayo-btn--green  { color: var(--mayo-btn-ghost-green); }
+.mayo-btn--ghost.mayo-btn--green:hover:not(:disabled)  { background: var(--mayo-btn-ghost-green-hover); }
+.mayo-btn--ghost.mayo-btn--purple { color: var(--mayo-btn-ghost-purple); }
+.mayo-btn--ghost.mayo-btn--purple:hover:not(:disabled) { background: var(--mayo-btn-ghost-purple-hover); }
 .mayo-btn--ghost.mayo-btn--gray   { color: var(--mayo-text-secondary); }
 .mayo-btn--ghost.mayo-btn--gray:hover:not(:disabled)   { background: var(--mayo-bg-muted); }

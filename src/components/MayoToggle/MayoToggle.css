@@ -42,11 +42,11 @@
 .mayo-toggle--lg::after { width: 23px; height: 23px; left: 4px; }
 
 /* checked */
-.mayo-toggle__input:checked + .mayo-toggle--blue   { background: #3abff8; }
-.mayo-toggle__input:checked + .mayo-toggle--red    { background: #f87272; }
-.mayo-toggle__input:checked + .mayo-toggle--green  { background: #36d399; }
-.mayo-toggle__input:checked + .mayo-toggle--purple { background: #a855f7; }
-.mayo-toggle__input:checked + .mayo-toggle--gray   { background: #6b7280; }
+.mayo-toggle__input:checked + .mayo-toggle--blue   { background: var(--mayo-accent-blue); }
+.mayo-toggle__input:checked + .mayo-toggle--red    { background: var(--mayo-accent-red); }
+.mayo-toggle__input:checked + .mayo-toggle--green  { background: var(--mayo-accent-green); }
+.mayo-toggle__input:checked + .mayo-toggle--purple { background: var(--mayo-accent-purple); }
+.mayo-toggle__input:checked + .mayo-toggle--gray   { background: var(--mayo-accent-gray); }
 
 .mayo-toggle__input:checked + .mayo-toggle--sm::after { left: calc(100% - 16px); }
 .mayo-toggle__input:checked + .mayo-toggle--md::after { left: calc(100% - 21px); }

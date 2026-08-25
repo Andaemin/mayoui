@@ -4,9 +4,9 @@
 
 .mayo-sidebar__item--active > .mayo-sidebar__link,
 .mayo-sidebar__item--active > .mayo-dropdown > .mayo-dropdown__trigger > .mayo-sidebar__trigger {
-    color: #2e8af2;
+    color: var(--mayo-color-primary);
     font-weight: 600;
-    background: rgba(46, 138, 242, 0.08);
+    background: var(--mayo-color-primary-subtle);
 }
 
 .mayo-sidebar__link,

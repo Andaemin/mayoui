@@ -1,4 +1,5 @@
 :root {
+    /* Semantic - light/dark 전환 */
     --mayo-bg: #ffffff;
     --mayo-bg-subtle: #f9fafb;
     --mayo-bg-muted: #f3f4f6;
@@ -12,6 +13,110 @@
     --mayo-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
     --mayo-shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
     --mayo-shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.12);
+
+    /* Accent palette - 브랜드 컬러 (theme 무관) */
+    --mayo-accent-blue: #3abff8;
+    --mayo-accent-red: #f87272;
+    --mayo-accent-green: #36d399;
+    --mayo-accent-purple: #a855f7;
+    --mayo-accent-gray: #6b7280;
+
+    /* Interactive / 상태 색상 */
+    --mayo-color-primary: #2e8af2;
+    --mayo-color-primary-hover: #1d4ed8;
+    --mayo-color-primary-subtle: rgba(46, 138, 242, 0.08);
+    --mayo-color-primary-ring: rgba(46, 138, 242, 0.15);
+    --mayo-color-error: #ef4444;
+    --mayo-color-error-hover: #dc2626;
+    --mayo-color-error-ring: rgba(239, 68, 68, 0.15);
+
+    /* Tooltip */
+    --mayo-tooltip-bg: #1f2937;
+    --mayo-tooltip-text: #ffffff;
+    --mayo-tooltip-text-muted: #9ca3af;
+    --mayo-tooltip-text-dim: #d1d5db;
+
+    /* Button - primary variants */
+    --mayo-btn-blue: #2e8af2;
+    --mayo-btn-blue-hover: #1d4ed8;
+    --mayo-btn-red: #ef4444;
+    --mayo-btn-red-hover: #dc2626;
+    --mayo-btn-green: #16a34a;
+    --mayo-btn-green-hover: #15803d;
+    --mayo-btn-purple: #7c3aed;
+    --mayo-btn-purple-hover: #6d28d9;
+    --mayo-btn-gray: #374151;
+    --mayo-btn-gray-hover: #1f2937;
+
+    /* Button - secondary variants */
+    --mayo-btn-sec-blue-bg: #dbeafe;
+    --mayo-btn-sec-blue-text: #1d4ed8;
+    --mayo-btn-sec-blue-hover: #bfdbfe;
+    --mayo-btn-sec-red-bg: #fee2e2;
+    --mayo-btn-sec-red-text: #dc2626;
+    --mayo-btn-sec-red-hover: #fecaca;
+    --mayo-btn-sec-green-bg: #dcfce7;
+    --mayo-btn-sec-green-text: #15803d;
+    --mayo-btn-sec-green-hover: #bbf7d0;
+    --mayo-btn-sec-purple-bg: #ede9fe;
+    --mayo-btn-sec-purple-text: #6d28d9;
+    --mayo-btn-sec-purple-hover: #ddd6fe;
+
+    /* Button - ghost variants */
+    --mayo-btn-ghost-blue: #2563eb;
+    --mayo-btn-ghost-blue-hover: rgba(37, 99, 235, 0.08);
+    --mayo-btn-ghost-red: #dc2626;
+    --mayo-btn-ghost-red-hover: rgba(220, 38, 38, 0.08);
+    --mayo-btn-ghost-green: #15803d;
+    --mayo-btn-ghost-green-hover: rgba(21, 128, 61, 0.08);
+    --mayo-btn-ghost-purple: #6d28d9;
+    --mayo-btn-ghost-purple-hover: rgba(109, 40, 217, 0.08);
+
+    /* Badge - solid */
+    --mayo-badge-blue-solid-bg: #3abff8;
+    --mayo-badge-red-solid-bg: #f87272;
+    --mayo-badge-green-solid-bg: #36d399;
+    --mayo-badge-purple-solid-bg: #a855f7;
+    --mayo-badge-gray-solid-bg: #9ca3af;
+
+    /* Badge - soft */
+    --mayo-badge-blue-soft-bg: #edfafd;
+    --mayo-badge-blue-soft-text: #0891b2;
+    --mayo-badge-blue-soft-border: #a5e6f7;
+    --mayo-badge-red-soft-bg: #fffbfb;
+    --mayo-badge-red-soft-text: #dc2626;
+    --mayo-badge-red-soft-border: #fbb6b6;
+    --mayo-badge-green-soft-bg: #f4fff9;
+    --mayo-badge-green-soft-text: #059669;
+    --mayo-badge-green-soft-border: #6ee7b7;
+    --mayo-badge-purple-soft-bg: #f9f7ff;
+    --mayo-badge-purple-soft-text: #b99fe6;
+    --mayo-badge-purple-soft-border: #e9e4ff;
+    --mayo-badge-gray-soft-bg: #fafbff;
+    --mayo-badge-gray-soft-text: #565f6d;
+    --mayo-badge-gray-soft-border: #d9e8ff;
+
+    /* Alert */
+    --mayo-alert-info-bg: #f5faff;
+    --mayo-alert-info-text: #1e40af;
+    --mayo-alert-success-bg: #f5fdf8;
+    --mayo-alert-success-text: #065f46;
+    --mayo-alert-warning-bg: #fffdf5;
+    --mayo-alert-warning-text: #92400e;
+    --mayo-alert-error-bg: #fff5f5;
+    --mayo-alert-error-text: #991b1b;
+
+    /* Toast */
+    --mayo-toast-success: #22c55e;
+    --mayo-toast-error: #ef4444;
+    --mayo-toast-info: #3b82f6;
+    --mayo-toast-warning: #f59e0b;
+
+    /* Avatar status */
+    --mayo-status-online: #36d399;
+    --mayo-status-offline: #9ca3af;
+    --mayo-status-busy: #f87272;
+    --mayo-status-away: #fbbf24;
 }
 
 [data-theme="dark"] {
@@ -28,4 +133,14 @@
     --mayo-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
     --mayo-shadow-md: 0 4px 16px rgba(0, 0, 0, 0.3);
     --mayo-shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.4);
+
+    /* Alert - dark override */
+    --mayo-alert-info-bg: rgba(30, 64, 175, 0.15);
+    --mayo-alert-info-text: #93c5fd;
+    --mayo-alert-success-bg: rgba(6, 95, 70, 0.15);
+    --mayo-alert-success-text: #6ee7b7;
+    --mayo-alert-warning-bg: rgba(146, 64, 14, 0.15);
+    --mayo-alert-warning-text: #fcd34d;
+    --mayo-alert-error-bg: rgba(153, 27, 27, 0.15);
+    --mayo-alert-error-text: #fca5a5;
 }

@@ -34,11 +34,11 @@
     color: var(--mayo-text-secondary);
 }
 
-.mayo-tabs--line .mayo-tabs__tab--active.mayo-tabs--blue   { color: #3abff8; border-color: #3abff8; }
-.mayo-tabs--line .mayo-tabs__tab--active.mayo-tabs--red    { color: #f87272; border-color: #f87272; }
-.mayo-tabs--line .mayo-tabs__tab--active.mayo-tabs--green  { color: #36d399; border-color: #36d399; }
-.mayo-tabs--line .mayo-tabs__tab--active.mayo-tabs--purple { color: #a855f7; border-color: #a855f7; }
-.mayo-tabs--line .mayo-tabs__tab--active.mayo-tabs--gray   { color: #6b7280; border-color: #6b7280; }
+.mayo-tabs--line .mayo-tabs__tab--active.mayo-tabs--blue   { color: var(--mayo-accent-blue);   border-color: var(--mayo-accent-blue); }
+.mayo-tabs--line .mayo-tabs__tab--active.mayo-tabs--red    { color: var(--mayo-accent-red);    border-color: var(--mayo-accent-red); }
+.mayo-tabs--line .mayo-tabs__tab--active.mayo-tabs--green  { color: var(--mayo-accent-green);  border-color: var(--mayo-accent-green); }
+.mayo-tabs--line .mayo-tabs__tab--active.mayo-tabs--purple { color: var(--mayo-accent-purple); border-color: var(--mayo-accent-purple); }
+.mayo-tabs--line .mayo-tabs__tab--active.mayo-tabs--gray   { color: var(--mayo-accent-gray);   border-color: var(--mayo-accent-gray); }
 
 /* pill variant */
 .mayo-tabs--pill .mayo-tabs__list {
@@ -65,11 +65,11 @@
     color: var(--mayo-text-secondary);
 }
 
-.mayo-tabs--pill .mayo-tabs__tab--active.mayo-tabs--blue   { background: #3abff8; color: #fff; }
-.mayo-tabs--pill .mayo-tabs__tab--active.mayo-tabs--red    { background: #f87272; color: #fff; }
-.mayo-tabs--pill .mayo-tabs__tab--active.mayo-tabs--green  { background: #36d399; color: #fff; }
-.mayo-tabs--pill .mayo-tabs__tab--active.mayo-tabs--purple { background: #a855f7; color: #fff; }
-.mayo-tabs--pill .mayo-tabs__tab--active.mayo-tabs--gray   { background: #6b7280; color: #fff; }
+.mayo-tabs--pill .mayo-tabs__tab--active.mayo-tabs--blue   { background: var(--mayo-accent-blue);   color: #fff; }
+.mayo-tabs--pill .mayo-tabs__tab--active.mayo-tabs--red    { background: var(--mayo-accent-red);    color: #fff; }
+.mayo-tabs--pill .mayo-tabs__tab--active.mayo-tabs--green  { background: var(--mayo-accent-green);  color: #fff; }
+.mayo-tabs--pill .mayo-tabs__tab--active.mayo-tabs--purple { background: var(--mayo-accent-purple); color: #fff; }
+.mayo-tabs--pill .mayo-tabs__tab--active.mayo-tabs--gray   { background: var(--mayo-accent-gray);   color: #fff; }
 
 /* disabled */
 .mayo-tabs__tab:disabled { opacity: 0.4; cursor: not-allowed; }

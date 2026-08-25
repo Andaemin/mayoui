@@ -39,11 +39,11 @@
 .mayo-radio--lg::after { width: 9px; height: 9px; }
 
 /* checked */
-.mayo-radio__input:checked + .mayo-radio--blue   { background: #3abff8; border-color: #3abff8; }
-.mayo-radio__input:checked + .mayo-radio--red    { background: #f87272; border-color: #f87272; }
-.mayo-radio__input:checked + .mayo-radio--green  { background: #36d399; border-color: #36d399; }
-.mayo-radio__input:checked + .mayo-radio--purple { background: #a855f7; border-color: #a855f7; }
-.mayo-radio__input:checked + .mayo-radio--gray   { background: #6b7280; border-color: #6b7280; }
+.mayo-radio__input:checked + .mayo-radio--blue   { background: var(--mayo-accent-blue);   border-color: var(--mayo-accent-blue); }
+.mayo-radio__input:checked + .mayo-radio--red    { background: var(--mayo-accent-red);    border-color: var(--mayo-accent-red); }
+.mayo-radio__input:checked + .mayo-radio--green  { background: var(--mayo-accent-green);  border-color: var(--mayo-accent-green); }
+.mayo-radio__input:checked + .mayo-radio--purple { background: var(--mayo-accent-purple); border-color: var(--mayo-accent-purple); }
+.mayo-radio__input:checked + .mayo-radio--gray   { background: var(--mayo-accent-gray);   border-color: var(--mayo-accent-gray); }
 .mayo-radio__input:checked + .mayo-radio::after  { transform: translate(-50%, -50%) scale(1); }
 
 .mayo-radio__label { font-size: 14px; color: var(--mayo-text-secondary); }

@@ -7,7 +7,7 @@
 }
 
 .mayo-line-chart__crosshair {
-    stroke: #d1d5db;
+    stroke: var(--mayo-border-strong);
     stroke-width: 1;
     stroke-dasharray: 4 3;
 }

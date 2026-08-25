@@ -15,14 +15,14 @@
 }
 
 .mayo-textarea::placeholder { color: var(--mayo-text-placeholder); }
-.mayo-textarea:focus { border-color: #2e8af2; box-shadow: 0 0 0 3px rgba(46, 138, 242, 0.15); }
+.mayo-textarea:focus { border-color: var(--mayo-color-primary); box-shadow: 0 0 0 3px var(--mayo-color-primary-ring); }
 .mayo-textarea:disabled { background: var(--mayo-bg-subtle); color: var(--mayo-text-placeholder); cursor: not-allowed; opacity: 0.7; resize: none; }
-.mayo-textarea--error { border-color: #ef4444; }
-.mayo-textarea--error:focus { border-color: #ef4444; box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15); }
+.mayo-textarea--error { border-color: var(--mayo-color-error); }
+.mayo-textarea--error:focus { border-color: var(--mayo-color-error); box-shadow: 0 0 0 3px var(--mayo-color-error-ring); }
 
 .mayo-textarea--sm { padding: 7px 11px;  font-size: 14px; border-radius: 8px;  min-height: 80px; }
 .mayo-textarea--md { padding: 9px 13px;  font-size: 16px; border-radius: 10px; min-height: 100px; }
 .mayo-textarea--lg { padding: 11px 15px; font-size: 18px; border-radius: 12px; min-height: 120px; }
 
-.mayo-textarea__error { font-size: 13px; color: #ef4444; }
+.mayo-textarea__error { font-size: 13px; color: var(--mayo-color-error); }
 .mayo-textarea__hint  { font-size: 13px; color: var(--mayo-text-muted); }

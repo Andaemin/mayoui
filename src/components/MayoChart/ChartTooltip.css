@@ -2,19 +2,19 @@
     position: absolute;
     z-index: 10;
     pointer-events: none;
-    background: #1f2937;
-    color: #fff;
+    background: var(--mayo-tooltip-bg);
+    color: var(--mayo-tooltip-text);
     border-radius: 8px;
     padding: 8px 12px;
     font-size: 12px;
     min-width: 120px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: var(--mayo-shadow-md);
 }
 
 .mayo-chart-tooltip__title {
     font-weight: 600;
     font-size: 11px;
-    color: #9ca3af;
+    color: var(--mayo-tooltip-text-muted);
     margin-bottom: 6px;
 }
 
@@ -34,10 +34,10 @@
 
 .mayo-chart-tooltip__label {
     flex: 1;
-    color: #d1d5db;
+    color: var(--mayo-tooltip-text-dim);
 }
 
 .mayo-chart-tooltip__value {
     font-weight: 600;
-    color: #fff;
+    color: var(--mayo-tooltip-text);
 }

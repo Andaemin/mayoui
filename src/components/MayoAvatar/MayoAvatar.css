@@ -57,7 +57,7 @@
 .mayo-avatar--lg .mayo-avatar__status { width: 13px; height: 13px; }
 .mayo-avatar--xl .mayo-avatar__status { width: 15px; height: 15px; }
 
-.mayo-avatar__status--online  { background: #36d399; }
-.mayo-avatar__status--offline { background: #9ca3af; }
-.mayo-avatar__status--busy    { background: #f87272; }
-.mayo-avatar__status--away    { background: #fbbf24; }
+.mayo-avatar__status--online  { background: var(--mayo-status-online); }
+.mayo-avatar__status--offline { background: var(--mayo-status-offline); }
+.mayo-avatar__status--busy    { background: var(--mayo-status-busy); }
+.mayo-avatar__status--away    { background: var(--mayo-status-away); }

@@ -15,15 +15,15 @@
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.mayo-select:focus { border-color: #2e8af2; box-shadow: 0 0 0 3px rgba(46, 138, 242, 0.15); }
+.mayo-select:focus { border-color: var(--mayo-color-primary); box-shadow: 0 0 0 3px var(--mayo-color-primary-ring); }
 .mayo-select:disabled { background: var(--mayo-bg-subtle); color: var(--mayo-text-placeholder); cursor: not-allowed; opacity: 0.7; }
-.mayo-select--error { border-color: #ef4444; }
-.mayo-select--error:focus { border-color: #ef4444; box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15); }
+.mayo-select--error { border-color: var(--mayo-color-error); }
+.mayo-select--error:focus { border-color: var(--mayo-color-error); box-shadow: 0 0 0 3px var(--mayo-color-error-ring); }
 
 .mayo-select--sm { padding: 7px 32px 7px 11px;  font-size: 14px; border-radius: 8px; }
 .mayo-select--md { padding: 9px 36px 9px 13px;   font-size: 16px; border-radius: 10px; }
 .mayo-select--lg { padding: 11px 40px 11px 15px; font-size: 18px; border-radius: 12px; }
 
 .mayo-select__arrow { position: absolute; right: 12px; pointer-events: none; color: var(--mayo-text-muted); font-size: 14px; }
-.mayo-select__error { font-size: 13px; color: #ef4444; }
+.mayo-select__error { font-size: 13px; color: var(--mayo-color-error); }
 .mayo-select__hint  { font-size: 13px; color: var(--mayo-text-muted); }

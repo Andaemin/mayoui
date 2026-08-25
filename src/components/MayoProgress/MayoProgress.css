@@ -33,8 +33,8 @@
 }
 
 /* color */
-.mayo-progress--blue   .mayo-progress__bar { background: #3abff8; }
-.mayo-progress--red    .mayo-progress__bar { background: #f87272; }
-.mayo-progress--green  .mayo-progress__bar { background: #36d399; }
-.mayo-progress--purple .mayo-progress__bar { background: #a855f7; }
-.mayo-progress--gray   .mayo-progress__bar { background: #6b7280; }
+.mayo-progress--blue   .mayo-progress__bar { background: var(--mayo-accent-blue); }
+.mayo-progress--red    .mayo-progress__bar { background: var(--mayo-accent-red); }
+.mayo-progress--green  .mayo-progress__bar { background: var(--mayo-accent-green); }
+.mayo-progress--purple .mayo-progress__bar { background: var(--mayo-accent-purple); }
+.mayo-progress--gray   .mayo-progress__bar { background: var(--mayo-accent-gray); }
