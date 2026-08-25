@@ -1,3 +1,5 @@
+import "./styles/mayo-theme.css";
+
 export * from "./components/MayoAlert";
 export * from "./components/MayoAvatar";
 export * from "./components/MayoBadge";
@@ -22,3 +24,4 @@ export * from "./components/MayoTextarea";
 export * from "./components/MayoTabs";
 export * from "./components/MayoTooltip";
 export * from "./components/MayoToast";
+export * from "./components/MayoPieChart";

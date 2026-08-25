@@ -22,6 +22,7 @@ import { MayoTabs } from "../components/MayoTabs";
 import { MayoCard } from "../components/MayoCard";
 import { MayoRadio } from "../components/MayoRadio";
 import { MayoProgress } from "../components/MayoProgress";
+import { MayoPieChart } from "../components/MayoPieChart";
 import { MdExpandMore } from "react-icons/md";
 
 function App() {
@@ -280,6 +281,27 @@ function App() {
                             series={[
                                 { key: "방문자", color: "purple", label: "방문자" },
                                 { key: "신규", color: "green", label: "신규 방문자" },
+                            ]}
+                        />
+                    </div>
+                    <p>Mayo Pie Chart Test</p>
+                    <div style={{ display: "flex", gap: 32, flexWrap: "wrap", alignItems: "flex-start" }}>
+                        <MayoPieChart
+                            title="카테고리별 비율"
+                            data={[
+                                { label: "개발", value: 42 },
+                                { label: "디자인", value: 28 },
+                                { label: "마케팅", value: 18 },
+                                { label: "기타", value: 12 },
+                            ]}
+                        />
+                        <MayoPieChart
+                            title="도넛 차트"
+                            donut
+                            data={[
+                                { label: "완료", value: 68 },
+                                { label: "진행 중", value: 22 },
+                                { label: "대기", value: 10 },
                             ]}
                         />
                     </div>

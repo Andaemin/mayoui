@@ -1,15 +1,23 @@
 {
     "name": "mayoui-react",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "description": "React UI 컴포넌트 라이브러리",
     "keywords": [
         "react",
-        "ui",
-        "components",
         "typescript",
+        "ui",
+        "component-library",
+        "design-system",
+        "korean",
+        "dark-mode",
+        "chart",
+        "avatar",
         "button",
         "dialog",
-        "toast"
+        "toast",
+        "sidebar",
+        "tabs",
+        "tooltip"
     ],
     "license": "MIT",
     "author": "creamnayeon",
@@ -21,6 +29,7 @@
     "main": "./dist/index.js",
     "module": "./dist/index.js",
     "types": "./dist/index.d.ts",
+    "style": "./dist/index.css",
     "exports": {
         ".": {
             "import": "./dist/index.js",

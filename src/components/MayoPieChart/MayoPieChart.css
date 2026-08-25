@@ -1,0 +1,34 @@
+.mayo-pie-chart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: inherit;
+}
+
+.mayo-pie-chart__title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--mayo-text);
+    margin: 0 0 12px;
+    align-self: flex-start;
+}
+
+.mayo-pie-chart__slice {
+    transition: opacity 0.15s ease, transform 0.15s ease;
+    transform-origin: center;
+    cursor: pointer;
+}
+
+.mayo-pie-chart__slice:hover {
+    opacity: 0.85;
+    transform: scale(1.03);
+}
+
+.mayo-pie-chart__animation {
+    animation: mayo-pie-fadein 0.5s ease both;
+}
+
+@keyframes mayo-pie-fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
