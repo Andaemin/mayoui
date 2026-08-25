@@ -30,7 +30,7 @@ export function MayoTabs({ tabs, value, defaultValue, onChange, variant = "line"
                 ))}
             </div>
             {activeTab?.children && (
-                <div className="mayo-tabs__content" role="tabpanel">
+                <div key={active} className="mayo-tabs__content" role="tabpanel">
                     {activeTab.children}
                 </div>
             )}
