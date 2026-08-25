@@ -1,0 +1,51 @@
+.mayo-avatar {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    background: var(--mayo-bg-muted);
+    color: var(--mayo-text-muted);
+    font-weight: 600;
+    overflow: hidden;
+    user-select: none;
+}
+
+/* shape */
+.mayo-avatar--circle { border-radius: 50%; }
+.mayo-avatar--square { border-radius: 20%; }
+
+/* size */
+.mayo-avatar--xs { width: 24px;  height: 24px;  font-size: 10px; }
+.mayo-avatar--sm { width: 32px;  height: 32px;  font-size: 12px; }
+.mayo-avatar--md { width: 40px;  height: 40px;  font-size: 14px; }
+.mayo-avatar--lg { width: 52px;  height: 52px;  font-size: 18px; }
+.mayo-avatar--xl { width: 64px;  height: 64px;  font-size: 22px; }
+
+/* image */
+.mayo-avatar__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* status dot */
+.mayo-avatar__status {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-radius: 50%;
+    border: 2px solid var(--mayo-bg);
+}
+
+.mayo-avatar--xs .mayo-avatar__status { width: 7px;  height: 7px; }
+.mayo-avatar--sm .mayo-avatar__status { width: 9px;  height: 9px; }
+.mayo-avatar--md .mayo-avatar__status { width: 11px; height: 11px; }
+.mayo-avatar--lg .mayo-avatar__status { width: 13px; height: 13px; }
+.mayo-avatar--xl .mayo-avatar__status { width: 15px; height: 15px; }
+
+.mayo-avatar__status--online  { background: #36d399; }
+.mayo-avatar__status--offline { background: #9ca3af; }
+.mayo-avatar__status--busy    { background: #f87272; }
+.mayo-avatar__status--away    { background: #fbbf24; }

@@ -1,4 +1,5 @@
 export * from "./components/MayoAlert";
+export * from "./components/MayoAvatar";
 export * from "./components/MayoBadge";
 export * from "./components/MayoBarChart";
 export * from "./components/MayoLineChart";

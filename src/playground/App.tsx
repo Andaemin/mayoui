@@ -14,6 +14,7 @@ import { MayoTextarea } from "../components/MayoTextarea";
 import { MayoToggle } from "../components/MayoToggle";
 import { MayoCheckbox } from "../components/MayoCheckbox";
 import { MayoAlert } from "../components/MayoAlert";
+import { MayoAvatar } from "../components/MayoAvatar";
 import { MayoBarChart } from "../components/MayoBarChart";
 import { MayoLineChart } from "../components/MayoLineChart";
 import { MayoTooltip } from "../components/MayoTooltip";
@@ -325,6 +326,28 @@ function App() {
                                 { value: "badge", label: "배지", children: <span>MayoBadge 컴포넌트 내용</span> },
                             ]}
                         />
+                    </div>
+                    <p>Mayo Avatar Test</p>
+                    <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+                        <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
+                            <MayoAvatar size="xs" name="홍길동" />
+                            <MayoAvatar size="sm" name="홍길동" />
+                            <MayoAvatar size="md" name="홍길동" />
+                            <MayoAvatar size="lg" name="홍길동" />
+                            <MayoAvatar size="xl" name="홍길동" />
+                        </div>
+                        <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
+                            <MayoAvatar size="md" name="John Doe" />
+                            <MayoAvatar size="md" shape="square" name="홍길동" />
+                            <MayoAvatar size="md" />
+                            <MayoAvatar size="md" src="https://i.pravatar.cc/150?img=1" alt="유저" />
+                        </div>
+                        <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
+                            <MayoAvatar size="md" name="온라인" status="online" />
+                            <MayoAvatar size="md" name="오프라인" status="offline" />
+                            <MayoAvatar size="md" name="바쁨" status="busy" />
+                            <MayoAvatar size="md" name="자리비움" status="away" />
+                        </div>
                     </div>
                     <p>Mayo Alert Test</p>
                     <div style={{ display: "flex", flexDirection: "column", gap: 10, maxWidth: 480 }}>
