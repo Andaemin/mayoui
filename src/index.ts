@@ -1,5 +1,7 @@
 export * from "./components/MayoAlert";
 export * from "./components/MayoBadge";
+export * from "./components/MayoBarChart";
+export * from "./components/MayoLineChart";
 export * from "./components/MayoCard";
 export * from "./components/MayoCheckbox";
 export * from "./components/MayoProgress";
@@ -17,4 +19,5 @@ export * from "./components/MayoSelect";
 export * from "./components/MayoSidebar";
 export * from "./components/MayoTextarea";
 export * from "./components/MayoTabs";
+export * from "./components/MayoTooltip";
 export * from "./components/MayoToast";

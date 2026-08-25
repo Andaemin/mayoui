@@ -1,0 +1,26 @@
+.mayo-chart-legend {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-top: 12px;
+    justify-content: center;
+}
+
+.mayo-chart-legend__item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.mayo-chart-legend__dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.mayo-chart-legend__label {
+    font-size: 12px;
+    color: #6b7280;
+}

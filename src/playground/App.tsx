@@ -14,6 +14,9 @@ import { MayoTextarea } from "../components/MayoTextarea";
 import { MayoToggle } from "../components/MayoToggle";
 import { MayoCheckbox } from "../components/MayoCheckbox";
 import { MayoAlert } from "../components/MayoAlert";
+import { MayoBarChart } from "../components/MayoBarChart";
+import { MayoLineChart } from "../components/MayoLineChart";
+import { MayoTooltip } from "../components/MayoTooltip";
 import { MayoTabs } from "../components/MayoTabs";
 import { MayoCard } from "../components/MayoCard";
 import { MayoRadio } from "../components/MayoRadio";
@@ -221,6 +224,63 @@ function App() {
                         >
                             hover 시 위로 떠오릅니다.
                         </MayoCard>
+                    </div>
+                    <p>Mayo Bar Chart Test</p>
+                    <div style={{ width: "100%", maxWidth: 600 }}>
+                        <MayoBarChart
+                            title="월별 매출/비용"
+                            height={280}
+                            data={[
+                                { label: "1월", 매출: 120, 비용: 80 },
+                                { label: "2월", 매출: 85, 비용: 60 },
+                                { label: "3월", 매출: 200, 비용: 130 },
+                                { label: "4월", 매출: 160, 비용: 100 },
+                                { label: "5월", 매출: 230, 비용: 150 },
+                                { label: "6월", 매출: 190, 비용: 120 },
+                            ]}
+                            series={[
+                                { key: "매출", color: "blue", label: "매출" },
+                                { key: "비용", color: "red", label: "비용" },
+                            ]}
+                        />
+                    </div>
+                    <p>Mayo Line Chart Test</p>
+                    <div style={{ width: "100%", maxWidth: 600 }}>
+                        <MayoLineChart
+                            title="주간 방문자 추이"
+                            height={280}
+                            data={[
+                                { label: "월", 방문자: 320, 신규: 140 },
+                                { label: "화", 방문자: 480, 신규: 200 },
+                                { label: "수", 방문자: 390, 신규: 170 },
+                                { label: "목", 방문자: 550, 신규: 230 },
+                                { label: "금", 방문자: 620, 신규: 280 },
+                                { label: "토", 방문자: 410, 신규: 160 },
+                                { label: "일", 방문자: 290, 신규: 110 },
+                            ]}
+                            series={[
+                                { key: "방문자", color: "purple", label: "방문자" },
+                                { key: "신규", color: "green", label: "신규 방문자" },
+                            ]}
+                        />
+                    </div>
+                    <p>Mayo Tooltip Test</p>
+                    <div style={{ display: "flex", gap: 24, alignItems: "center", flexWrap: "wrap", padding: "20px 0" }}>
+                        <MayoTooltip content="위쪽 툴팁" position="top">
+                            <MayoBtn size="sm">top</MayoBtn>
+                        </MayoTooltip>
+                        <MayoTooltip content="아래쪽 툴팁" position="bottom">
+                            <MayoBtn size="sm">bottom</MayoBtn>
+                        </MayoTooltip>
+                        <MayoTooltip content="왼쪽 툴팁" position="left">
+                            <MayoBtn size="sm">left</MayoBtn>
+                        </MayoTooltip>
+                        <MayoTooltip content="오른쪽 툴팁" position="right">
+                            <MayoBtn size="sm">right</MayoBtn>
+                        </MayoTooltip>
+                        <MayoTooltip content="텍스트에도 사용 가능해요" position="top">
+                            <span style={{ fontSize: 13, color: "#6b7280", cursor: "default", textDecoration: "underline dotted" }}>마우스를 올려보세요</span>
+                        </MayoTooltip>
                     </div>
                     <p>Mayo Tabs Test</p>
                     <div style={{ display: "flex", flexDirection: "column", gap: 24, width: "100%", maxWidth: 480 }}>

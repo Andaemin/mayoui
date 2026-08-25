@@ -1,0 +1,83 @@
+.mayo-tooltip-wrapper {
+    position: relative;
+    display: inline-flex;
+}
+
+.mayo-tooltip {
+    position: absolute;
+    z-index: 100;
+    padding: 5px 10px;
+    background: #1f2937;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 500;
+    border-radius: 6px;
+    white-space: nowrap;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.mayo-tooltip::after {
+    content: "";
+    position: absolute;
+    border: 5px solid transparent;
+}
+
+/* top */
+.mayo-tooltip--top {
+    bottom: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%) translateY(4px);
+}
+.mayo-tooltip--top::after {
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-top-color: #1f2937;
+}
+
+/* bottom */
+.mayo-tooltip--bottom {
+    top: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%) translateY(-4px);
+}
+.mayo-tooltip--bottom::after {
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-bottom-color: #1f2937;
+}
+
+/* left */
+.mayo-tooltip--left {
+    right: calc(100% + 8px);
+    top: 50%;
+    transform: translateY(-50%) translateX(4px);
+}
+.mayo-tooltip--left::after {
+    left: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    border-left-color: #1f2937;
+}
+
+/* right */
+.mayo-tooltip--right {
+    left: calc(100% + 8px);
+    top: 50%;
+    transform: translateY(-50%) translateX(-4px);
+}
+.mayo-tooltip--right::after {
+    right: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    border-right-color: #1f2937;
+}
+
+/* visible */
+.mayo-tooltip-wrapper:hover .mayo-tooltip--top    { opacity: 1; transform: translateX(-50%) translateY(0); }
+.mayo-tooltip-wrapper:hover .mayo-tooltip--bottom { opacity: 1; transform: translateX(-50%) translateY(0); }
+.mayo-tooltip-wrapper:hover .mayo-tooltip--left   { opacity: 1; transform: translateY(-50%) translateX(0); }
+.mayo-tooltip-wrapper:hover .mayo-tooltip--right  { opacity: 1; transform: translateY(-50%) translateX(0); }

@@ -1,0 +1,22 @@
+.mayo-chart {
+    width: 100%;
+    font-family: inherit;
+}
+
+.mayo-chart__title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #111827;
+    margin: 0 0 12px;
+}
+
+.mayo-chart__grid {
+    stroke: #f3f4f6;
+    stroke-width: 1;
+}
+
+.mayo-chart__axis-label {
+    font-size: 11px;
+    fill: #9ca3af;
+    font-family: inherit;
+}

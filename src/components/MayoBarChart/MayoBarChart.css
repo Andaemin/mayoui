@@ -1,0 +1,10 @@
+.mayo-bar-chart__bar {
+    transform-box: fill-box;
+    transform-origin: bottom;
+    animation: mayo-bar-grow 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+@keyframes mayo-bar-grow {
+    from { transform: scaleY(0); }
+    to   { transform: scaleY(1); }
+}
