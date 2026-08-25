@@ -10,7 +10,7 @@ const ICONS: Record<string, string> = {
     warning: "⚠️",
 };
 
-export function MayoToast({ open, onClose, type = "info", position = "top-right", duration = 3000, children }: MayoToastProps) {
+export function MayoToast({ open, onClose, type = "info", position = "top-right", duration = 3000, children, iconClassName }: MayoToastProps) {
     useEffect(() => {
         if (!open) return;
         const timer = setTimeout(onClose, duration);
@@ -19,7 +19,7 @@ export function MayoToast({ open, onClose, type = "info", position = "top-right"
 
     return createPortal(
         <div className={`mayo-toast mayo-toast--${type} mayo-toast--${position} ${open ? "mayo-toast--open" : ""}`} role="alert" aria-live="polite">
-            <span className="mayo-toast__icon">{ICONS[type]}</span>
+            <span className={`mayo-toast__icon${iconClassName ? ` ${iconClassName}` : ""}`}>{ICONS[type]}</span>
             <span className="mayo-toast__message">{children}</span>
             <button className="mayo-toast__close" onClick={onClose} aria-label="닫기">
                 ✕

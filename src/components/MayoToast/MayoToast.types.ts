@@ -16,4 +16,5 @@ export type MayoToastProps = {
     position?: MayoToastPosition;
     duration?: number;
     children: ReactNode;
+    iconClassName?: string;
 };
