@@ -169,7 +169,9 @@ function App() {
                             footer={
                                 <>
                                     <MayoBtn size="sm">확인</MayoBtn>
-                                    <MayoBtn size="sm" variant="secondary">취소</MayoBtn>
+                                    <MayoBtn size="sm" variant="secondary">
+                                        취소
+                                    </MayoBtn>
                                 </>
                             }
                             style={{ width: 220 }}
@@ -180,17 +182,16 @@ function App() {
                             title="Elevated"
                             description="그림자 스타일"
                             variant="elevated"
-                            footer={<MayoBtn size="sm" variant="secondary">더보기</MayoBtn>}
+                            footer={
+                                <MayoBtn size="sm" variant="secondary">
+                                    더보기
+                                </MayoBtn>
+                            }
                             style={{ width: 220 }}
                         >
                             hover 시 위로 살짝 떠오릅니다.
                         </MayoCard>
-                        <MayoCard
-                            title="Flat"
-                            description="배경색 스타일"
-                            variant="flat"
-                            style={{ width: 220 }}
-                        >
+                        <MayoCard title="Flat" description="배경색 스타일" variant="flat" style={{ width: 220 }}>
                             푸터 없이 콘텐츠만 담을 때 사용해요.
                         </MayoCard>
                         <MayoCard
@@ -232,7 +233,11 @@ function App() {
                             description="그림자와 이미지 조합"
                             variant="elevated"
                             image="https://picsum.photos/seed/mayo2/400/225"
-                            footer={<MayoBtn size="sm" variant="secondary">닫기</MayoBtn>}
+                            footer={
+                                <MayoBtn size="sm" variant="secondary">
+                                    닫기
+                                </MayoBtn>
+                            }
                             style={{ width: 260 }}
                         >
                             hover 시 위로 떠오릅니다.
@@ -292,7 +297,9 @@ function App() {
                             <MayoBtn size="sm">right</MayoBtn>
                         </MayoTooltip>
                         <MayoTooltip content="텍스트에도 사용 가능해요" position="top">
-                            <span style={{ fontSize: 13, color: "#6b7280", cursor: "default", textDecoration: "underline dotted" }}>마우스를 올려보세요</span>
+                            <span style={{ fontSize: 13, color: "#6b7280", cursor: "default", textDecoration: "underline dotted" }}>
+                                마우스를 올려보세요
+                            </span>
                         </MayoTooltip>
                     </div>
                     <p>Mayo Tabs Test</p>
@@ -321,11 +328,21 @@ function App() {
                     </div>
                     <p>Mayo Alert Test</p>
                     <div style={{ display: "flex", flexDirection: "column", gap: 10, maxWidth: 480 }}>
-                        <MayoAlert type="info" title="안내" iconClassName="tossface">업데이트가 있습니다. 확인해주세요.</MayoAlert>
-                        <MayoAlert type="success" title="성공" iconClassName="tossface">저장이 완료되었습니다.</MayoAlert>
-                        <MayoAlert type="warning" title="경고" iconClassName="tossface">저장되지 않은 변경사항이 있습니다.</MayoAlert>
-                        <MayoAlert type="error" title="오류" iconClassName="tossface">요청을 처리하는 중 문제가 발생했습니다.</MayoAlert>
-                        <MayoAlert type="info" iconClassName="tossface" onClose={() => alert("닫기 클릭")}>제목 없이 메시지만 표시할 수도 있어요.</MayoAlert>
+                        <MayoAlert type="info" title="안내" iconClassName="tossface">
+                            업데이트가 있습니다. 확인해주세요.
+                        </MayoAlert>
+                        <MayoAlert type="success" title="성공" iconClassName="tossface">
+                            저장이 완료되었습니다.
+                        </MayoAlert>
+                        <MayoAlert type="warning" title="경고" iconClassName="tossface">
+                            저장되지 않은 변경사항이 있습니다.
+                        </MayoAlert>
+                        <MayoAlert type="error" title="오류" iconClassName="tossface">
+                            요청을 처리하는 중 문제가 발생했습니다.
+                        </MayoAlert>
+                        <MayoAlert type="info" iconClassName="tossface" onClose={() => alert("닫기 클릭")}>
+                            제목 없이 메시지만 표시할 수도 있어요.
+                        </MayoAlert>
                     </div>
                     <p>Mayo Radio Test</p>
                     <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>

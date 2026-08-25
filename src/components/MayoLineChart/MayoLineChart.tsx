@@ -110,7 +110,7 @@ export function MayoLineChart({ data, series, height = 300, title, showGrid = tr
                     )}
 
                     {/* hover zone */}
-                    {data.map((d, i) => {
+                    {data.map((_d, i) => {
                         const zoneW = data.length > 1 ? xStep : chartW;
                         return (
                             <rect
