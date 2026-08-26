@@ -20,6 +20,7 @@
     --mayo-accent-green: #36d399;
     --mayo-accent-purple: #a855f7;
     --mayo-accent-gray: #6b7280;
+    --mayo-accent-orange: #fb923c;
 
     /* Interactive / 상태 색상 */
     --mayo-color-primary: #2e8af2;
@@ -78,6 +79,11 @@
     --mayo-badge-green-solid-bg: #36d399;
     --mayo-badge-purple-solid-bg: #a855f7;
     --mayo-badge-gray-solid-bg: #9ca3af;
+
+    /* Tag - orange soft */
+    --mayo-tag-orange-soft-bg: #fff7ed;
+    --mayo-tag-orange-soft-text: #c2410c;
+    --mayo-tag-orange-soft-border: #fed7aa;
 
     /* Badge - soft */
     --mayo-badge-blue-soft-bg: #edfafd;

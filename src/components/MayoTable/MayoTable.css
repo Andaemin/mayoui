@@ -1,0 +1,108 @@
+.mayo-table-wrapper {
+    position: relative;
+    width: 100%;
+    overflow-x: auto;
+    border-radius: 12px;
+    border: 1px solid var(--mayo-border);
+    background: var(--mayo-surface);
+}
+
+.mayo-table-wrapper--bordered .mayo-table__td,
+.mayo-table-wrapper--bordered .mayo-table__th {
+    border-right: 1px solid var(--mayo-border);
+}
+.mayo-table-wrapper--bordered .mayo-table__td:last-child,
+.mayo-table-wrapper--bordered .mayo-table__th:last-child {
+    border-right: none;
+}
+
+.mayo-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+/* head */
+.mayo-table__head {
+    background: var(--mayo-bg-subtle);
+    border-bottom: 1px solid var(--mayo-border);
+}
+
+.mayo-table__th {
+    padding: 11px 16px;
+    text-align: left;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--mayo-text-muted);
+    white-space: nowrap;
+    user-select: none;
+}
+
+.mayo-table__th--sortable {
+    cursor: pointer;
+    transition: color 0.15s ease;
+}
+.mayo-table__th--sortable:hover { color: var(--mayo-text); }
+
+.mayo-table__th-inner {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.mayo-table__sort-icon {
+    font-size: 11px;
+    color: var(--mayo-text-placeholder);
+}
+
+.mayo-table__th--check,
+.mayo-table__td--check {
+    width: 40px;
+    padding: 11px 12px;
+}
+
+/* body */
+.mayo-table__row {
+    border-bottom: 1px solid var(--mayo-border);
+    transition: background 0.1s ease;
+}
+.mayo-table__row:last-child { border-bottom: none; }
+.mayo-table__row:hover { background: var(--mayo-bg-subtle); }
+.mayo-table__row--selected { background: var(--mayo-color-primary-ring) !important; }
+.mayo-table__row--stripe { background: var(--mayo-bg-subtle); }
+.mayo-table__row--stripe:hover { background: var(--mayo-bg-muted); }
+
+.mayo-table__td {
+    padding: 12px 16px;
+    color: var(--mayo-text-secondary);
+    vertical-align: middle;
+}
+
+/* checkbox */
+.mayo-table__checkbox {
+    width: 16px;
+    height: 16px;
+    accent-color: var(--mayo-color-primary);
+    cursor: pointer;
+}
+
+/* loading */
+.mayo-table__loading {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--mayo-bg);
+    opacity: 0.75;
+    z-index: 1;
+    border-radius: 12px;
+}
+
+/* empty */
+.mayo-table__empty {
+    padding: 48px 16px;
+    text-align: center;
+    color: var(--mayo-text-muted);
+    font-size: 14px;
+}

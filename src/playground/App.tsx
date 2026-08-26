@@ -23,7 +23,67 @@ import { MayoCard } from "../components/MayoCard";
 import { MayoRadio } from "../components/MayoRadio";
 import { MayoProgress } from "../components/MayoProgress";
 import { MayoPieChart } from "../components/MayoPieChart";
+import { MayoPagination } from "../components/MayoPagination";
+import { MayoTag } from "../components/MayoTag";
+import { MayoTable } from "../components/MayoTable";
+import type { MayoTableColumn } from "../components/MayoTable";
 import { MdExpandMore } from "react-icons/md";
+
+type TableRow = { id: number; name: string; role: string; status: string; score: number };
+
+const TABLE_COLUMNS: MayoTableColumn<TableRow>[] = [
+    { key: "id",     label: "ID",   width: 60,  sortable: true },
+    { key: "name",   label: "이름", width: 120, sortable: true },
+    { key: "role",   label: "역할", width: 120 },
+    { key: "status", label: "상태", width: 100, render: (v) => (
+        <MayoTag color={v === "활성" ? "green" : v === "대기" ? "orange" : "gray"} size="sm">
+            {String(v)}
+        </MayoTag>
+    )},
+    { key: "score",  label: "점수", width: 80,  sortable: true },
+];
+
+const TABLE_DATA: TableRow[] = [
+    { id: 1, name: "홍길동", role: "개발자",   status: "활성", score: 92 },
+    { id: 2, name: "김철수", role: "디자이너", status: "대기", score: 78 },
+    { id: 3, name: "이영희", role: "PM",       status: "활성", score: 85 },
+    { id: 4, name: "박민준", role: "개발자",   status: "비활성", score: 60 },
+    { id: 5, name: "최수진", role: "마케터",   status: "활성", score: 95 },
+];
+
+function TableDemo() {
+    return (
+        <div style={{ display: "flex", flexDirection: "column", gap: 24, width: "100%" }}>
+            <MayoTable
+                columns={TABLE_COLUMNS}
+                data={TABLE_DATA}
+                rowKey="id"
+                selectable
+                striped
+                onSelectionChange={(keys) => console.log("선택:", keys)}
+            />
+            <MayoTable
+                columns={TABLE_COLUMNS}
+                data={[]}
+                rowKey="id"
+                bordered
+                emptyText="조회된 데이터가 없어요."
+            />
+        </div>
+    );
+}
+
+function PaginationDemo() {
+    const [page, setPage] = useState(1);
+    return (
+        <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+            <MayoPagination page={page} totalPages={20} onChange={setPage} size="sm" />
+            <MayoPagination page={page} totalPages={20} onChange={setPage} size="md" />
+            <MayoPagination page={page} totalPages={20} onChange={setPage} size="lg" />
+            <MayoPagination page={page} totalPages={5} onChange={setPage} showFirstLast={false} />
+        </div>
+    );
+}
 
 function App() {
     const [dark, setDark] = useState(false);
@@ -284,6 +344,37 @@ function App() {
                             ]}
                         />
                     </div>
+                    <p>Mayo Table Test</p>
+                    <TableDemo />
+                    <p>Mayo Tag Test</p>
+                    <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+                        <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+                            <MayoTag color="blue">blue</MayoTag>
+                            <MayoTag color="red">red</MayoTag>
+                            <MayoTag color="green">green</MayoTag>
+                            <MayoTag color="purple">purple</MayoTag>
+                            <MayoTag color="gray">gray</MayoTag>
+                            <MayoTag color="orange">orange</MayoTag>
+                        </div>
+                        <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+                            <MayoTag color="blue" variant="solid">solid</MayoTag>
+                            <MayoTag color="red" variant="solid">solid</MayoTag>
+                            <MayoTag color="green" variant="outline">outline</MayoTag>
+                            <MayoTag color="purple" variant="outline">outline</MayoTag>
+                        </div>
+                        <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+                            <MayoTag size="sm" color="blue">sm</MayoTag>
+                            <MayoTag size="md" color="blue">md</MayoTag>
+                            <MayoTag size="lg" color="blue">lg</MayoTag>
+                        </div>
+                        <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+                            <MayoTag color="blue" icon="🔥" iconClassName="tossface">아이콘</MayoTag>
+                            <MayoTag color="red" onClose={() => alert("닫기")}>닫기 버튼</MayoTag>
+                            <MayoTag color="green" icon="✅" iconClassName="tossface" onClose={() => alert("닫기")}>아이콘 + 닫기</MayoTag>
+                        </div>
+                    </div>
+                    <p>Mayo Pagination Test</p>
+                    <PaginationDemo />
                     <p>Mayo Pie Chart Test</p>
                     <div style={{ display: "flex", gap: 32, flexWrap: "wrap", alignItems: "flex-start" }}>
                         <MayoPieChart

@@ -25,3 +25,6 @@ export * from "./components/MayoTabs";
 export * from "./components/MayoTooltip";
 export * from "./components/MayoToast";
 export * from "./components/MayoPieChart";
+export * from "./components/MayoPagination";
+export * from "./components/MayoTag";
+export * from "./components/MayoTable";

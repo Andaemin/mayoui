@@ -1,0 +1,53 @@
+.mayo-pagination {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.mayo-pagination__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--mayo-border);
+    border-radius: 8px;
+    background: var(--mayo-bg);
+    color: var(--mayo-text-secondary);
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+    line-height: 1;
+}
+
+.mayo-pagination__btn:hover:not(:disabled):not(.mayo-pagination__btn--active) {
+    background: var(--mayo-bg-muted);
+    border-color: var(--mayo-border-strong);
+}
+
+.mayo-pagination__btn:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+
+.mayo-pagination__btn--active {
+    background: var(--mayo-color-primary);
+    border-color: var(--mayo-color-primary);
+    color: #fff;
+    cursor: default;
+}
+
+.mayo-pagination__ellipsis {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--mayo-text-muted);
+}
+
+/* size */
+.mayo-pagination--sm .mayo-pagination__btn  { width: 28px; height: 28px; font-size: 12px; border-radius: 6px; }
+.mayo-pagination--sm .mayo-pagination__ellipsis { width: 28px; height: 28px; font-size: 12px; }
+
+.mayo-pagination--md .mayo-pagination__btn  { width: 36px; height: 36px; font-size: 14px; border-radius: 8px; }
+.mayo-pagination--md .mayo-pagination__ellipsis { width: 36px; height: 36px; font-size: 14px; }
+
+.mayo-pagination--lg .mayo-pagination__btn  { width: 44px; height: 44px; font-size: 16px; border-radius: 10px; }
+.mayo-pagination--lg .mayo-pagination__ellipsis { width: 44px; height: 44px; font-size: 16px; }
