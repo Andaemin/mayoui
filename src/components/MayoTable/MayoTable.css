@@ -82,8 +82,49 @@
 .mayo-table__checkbox {
     width: 16px;
     height: 16px;
-    accent-color: var(--mayo-color-primary);
+    appearance: none;
+    border: 2px solid var(--mayo-border-strong);
+    border-radius: 4px;
+    background: var(--mayo-bg);
     cursor: pointer;
+    position: relative;
+    flex-shrink: 0;
+    transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.mayo-table__checkbox:checked {
+    background: var(--mayo-color-primary);
+    border-color: var(--mayo-color-primary);
+}
+
+.mayo-table__checkbox:checked::after {
+    content: "";
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    width: 4px;
+    height: 7px;
+    border: 2px solid #fff;
+    border-top: none;
+    border-left: none;
+}
+
+.mayo-table__checkbox:indeterminate {
+    background: var(--mayo-color-primary);
+    border-color: var(--mayo-color-primary);
+}
+
+.mayo-table__checkbox:indeterminate::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 2px;
+    background: #fff;
+    border-radius: 1px;
 }
 
 /* loading */
