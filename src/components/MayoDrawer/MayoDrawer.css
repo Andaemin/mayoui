@@ -1,0 +1,105 @@
+.mayo-drawer-root {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    pointer-events: none;
+}
+
+.mayo-drawer-root--open {
+    pointer-events: auto;
+}
+
+/* backdrop */
+.mayo-drawer__backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+.mayo-drawer-root--open .mayo-drawer__backdrop {
+    opacity: 1;
+}
+
+/* drawer panel */
+.mayo-drawer {
+    position: absolute;
+    background: var(--mayo-surface);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.25s ease;
+    box-shadow: var(--mayo-shadow-lg);
+}
+
+/* position */
+.mayo-drawer--right {
+    top: 0; right: 0; bottom: 0;
+    transform: translateX(100%);
+}
+.mayo-drawer--right.mayo-drawer--open {
+    transform: translateX(0);
+}
+
+.mayo-drawer--left {
+    top: 0; left: 0; bottom: 0;
+    transform: translateX(-100%);
+}
+.mayo-drawer--left.mayo-drawer--open {
+    transform: translateX(0);
+}
+
+.mayo-drawer--top {
+    top: 0; left: 0; right: 0;
+    transform: translateY(-100%);
+}
+.mayo-drawer--top.mayo-drawer--open {
+    transform: translateY(0);
+}
+
+.mayo-drawer--bottom {
+    bottom: 0; left: 0; right: 0;
+    transform: translateY(100%);
+}
+.mayo-drawer--bottom.mayo-drawer--open {
+    transform: translateY(0);
+}
+
+/* header */
+.mayo-drawer__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--mayo-border);
+    flex-shrink: 0;
+}
+
+.mayo-drawer__title {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--mayo-text);
+}
+
+.mayo-drawer__close {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    color: var(--mayo-text-muted);
+    padding: 4px;
+    border-radius: 6px;
+    line-height: 1;
+    transition: background 0.15s ease, color 0.15s ease;
+}
+.mayo-drawer__close:hover {
+    background: var(--mayo-bg-muted);
+    color: var(--mayo-text);
+}
+
+/* body */
+.mayo-drawer__body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+}

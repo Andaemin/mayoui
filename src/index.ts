@@ -28,3 +28,7 @@ export * from "./components/MayoPieChart";
 export * from "./components/MayoPagination";
 export * from "./components/MayoTag";
 export * from "./components/MayoTable";
+export * from "./components/MayoDrawer";
+export * from "./components/MayoSkeleton";
+export * from "./components/MayoAccordion";
+export * from "./components/MayoSteps";

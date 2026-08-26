@@ -25,9 +25,38 @@ import { MayoProgress } from "../components/MayoProgress";
 import { MayoPieChart } from "../components/MayoPieChart";
 import { MayoPagination } from "../components/MayoPagination";
 import { MayoTag } from "../components/MayoTag";
+import { MayoDrawer } from "../components/MayoDrawer";
+import { MayoSkeleton } from "../components/MayoSkeleton";
+import { MayoAccordion } from "../components/MayoAccordion";
+import { MayoSteps } from "../components/MayoSteps";
 import { MayoTable } from "../components/MayoTable";
 import type { MayoTableColumn } from "../components/MayoTable";
 import { MdExpandMore } from "react-icons/md";
+
+function DrawerDemo() {
+    const [drawerOpen, setDrawerOpen] = useState(false);
+    const [position, setPosition] = useState<"left" | "right" | "top" | "bottom">("right");
+    return (
+        <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+            {(["right", "left", "bottom", "top"] as const).map((pos) => (
+                <MayoBtn key={pos} size="sm" variant="secondary" onClick={() => { setPosition(pos); setDrawerOpen(true); }}>
+                    {pos} 열기
+                </MayoBtn>
+            ))}
+            <MayoDrawer
+                open={drawerOpen}
+                onClose={() => setDrawerOpen(false)}
+                position={position}
+                title={`${position} Drawer`}
+            >
+                <p style={{ fontSize: 14, color: "var(--mayo-text-secondary)" }}>
+                    드로어 내용입니다. ESC 또는 배경 클릭으로 닫을 수 있어요.
+                </p>
+                <MayoBtn size="sm" onClick={() => setDrawerOpen(false)}>닫기</MayoBtn>
+            </MayoDrawer>
+        </div>
+    );
+}
 
 type TableRow = { id: number; name: string; role: string; status: string; score: number };
 
@@ -344,6 +373,72 @@ function App() {
                             ]}
                         />
                     </div>
+                    <p>Mayo Steps Test</p>
+                    <div style={{ display: "flex", flexDirection: "column", gap: 32, maxWidth: 560 }}>
+                        <MayoSteps
+                            current={1}
+                            color="blue"
+                            steps={[
+                                { label: "회원가입", description: "계정 생성" },
+                                { label: "정보 입력", description: "개인정보 작성" },
+                                { label: "인증", description: "이메일 확인" },
+                                { label: "완료", description: "가입 완료" },
+                            ]}
+                        />
+                        <MayoSteps
+                            current={2}
+                            color="green"
+                            direction="vertical"
+                            steps={[
+                                { label: "주문 접수" },
+                                { label: "결제 완료" },
+                                { label: "배송 중" },
+                                { label: "배송 완료" },
+                            ]}
+                        />
+                    </div>
+                    <p>Mayo Accordion Test</p>
+                    <div style={{ display: "flex", flexDirection: "column", gap: 24, maxWidth: 520 }}>
+                        <MayoAccordion
+                            defaultValue="q1"
+                            items={[
+                                { value: "q1", label: "mayoui-react는 무엇인가요?", children: "React 기반 UI 컴포넌트 라이브러리입니다. TypeScript와 CSS 변수 기반 다크모드를 지원합니다." },
+                                { value: "q2", label: "다크모드는 어떻게 사용하나요?", children: "document.documentElement.setAttribute('data-theme', 'dark') 로 전환할 수 있습니다." },
+                                { value: "q3", label: "외부 의존성이 있나요?", children: "react-icons만 의존합니다. 차트도 SVG로 직접 구현되어 있습니다." },
+                                { value: "q4", label: "비활성화 항목", children: "이 내용은 보이지 않아요.", disabled: true },
+                            ]}
+                        />
+                        <MayoAccordion
+                            multiple
+                            bordered={false}
+                            items={[
+                                { value: "a", label: "multiple + bordered 없음", children: "여러 항목을 동시에 열 수 있어요." },
+                                { value: "b", label: "두 번째 항목", children: "bordered={false} 로 테두리를 제거할 수 있습니다." },
+                                { value: "c", label: "세 번째 항목", children: "defaultValue 없이 전부 닫힌 상태로 시작합니다." },
+                            ]}
+                        />
+                    </div>
+                    <p>Mayo Skeleton Test</p>
+                    <div style={{ display: "flex", flexDirection: "column", gap: 24, maxWidth: 400 }}>
+                        <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
+                            <MayoSkeleton variant="circle" width={40} height={40} />
+                            <div style={{ flex: 1 }}>
+                                <MayoSkeleton variant="text" width="60%" />
+                                <div style={{ marginTop: 6 }}>
+                                    <MayoSkeleton variant="text" width="90%" />
+                                </div>
+                            </div>
+                        </div>
+                        <MayoSkeleton variant="rect" height={160} />
+                        <MayoSkeleton variant="text" lines={4} />
+                        <div style={{ display: "flex", gap: 8 }}>
+                            <MayoSkeleton variant="rect" width={80} height={32} rounded />
+                            <MayoSkeleton variant="rect" width={80} height={32} rounded />
+                            <MayoSkeleton variant="rect" width={80} height={32} rounded />
+                        </div>
+                    </div>
+                    <p>Mayo Drawer Test</p>
+                    <DrawerDemo />
                     <p>Mayo Table Test</p>
                     <TableDemo />
                     <p>Mayo Tag Test</p>
