@@ -1,0 +1,239 @@
+.mayo-datepicker {
+    position: relative;
+    display: inline-block;
+}
+
+/* input button */
+.mayo-datepicker__input {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 8px 12px;
+    min-width: 180px;
+    border: 1.5px solid var(--mayo-border-strong);
+    border-radius: 10px;
+    background: var(--mayo-bg);
+    color: var(--mayo-text);
+    font-size: 14px;
+    cursor: pointer;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    text-align: left;
+}
+
+.mayo-datepicker__input:hover:not(:disabled) {
+    border-color: var(--mayo-color-primary);
+}
+
+.mayo-datepicker__input--open {
+    border-color: var(--mayo-color-primary);
+    box-shadow: 0 0 0 3px var(--mayo-color-primary-ring);
+}
+
+.mayo-datepicker__input--disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background: var(--mayo-bg-subtle);
+}
+
+.mayo-datepicker__placeholder { color: var(--mayo-text-placeholder); }
+.mayo-datepicker__value       { color: var(--mayo-text); }
+.mayo-datepicker__icon        { color: var(--mayo-text-muted); flex-shrink: 0; }
+
+/* popup */
+.mayo-datepicker__popup {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    z-index: 200;
+    background: var(--mayo-surface);
+    border: 1px solid var(--mayo-border);
+    border-radius: 12px;
+    box-shadow: var(--mayo-shadow-lg);
+    padding: 12px;
+    width: 280px;
+    animation: mayo-dp-fadein 0.15s ease;
+}
+
+@keyframes mayo-dp-fadein {
+    from { opacity: 0; transform: translateY(-4px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* header */
+.mayo-datepicker__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.mayo-datepicker__nav {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: none;
+    border-radius: 6px;
+    font-size: 16px;
+    color: var(--mayo-text-muted);
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease;
+}
+.mayo-datepicker__nav:hover { background: var(--mayo-bg-muted); color: var(--mayo-text); }
+
+.mayo-datepicker__title {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+
+.mayo-datepicker__title-btn {
+    border: none;
+    background: none;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--mayo-text);
+    cursor: pointer;
+    padding: 3px 6px;
+    border-radius: 6px;
+    transition: background 0.15s ease;
+}
+.mayo-datepicker__title-btn:hover { background: var(--mayo-bg-muted); }
+
+/* weekdays */
+.mayo-datepicker__weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    margin-bottom: 4px;
+}
+
+.mayo-datepicker__weekday {
+    text-align: center;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--mayo-text-muted);
+    padding: 4px 0;
+}
+.mayo-datepicker__weekday--sun { color: var(--mayo-accent-red); }
+.mayo-datepicker__weekday--sat { color: var(--mayo-color-primary); }
+
+/* day grid */
+.mayo-datepicker__grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+}
+
+.mayo-datepicker__day {
+    width: 100%;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: none;
+    border-radius: 50%;
+    font-size: 13px;
+    color: var(--mayo-text-secondary);
+    cursor: pointer;
+    transition: background 0.1s ease, color 0.1s ease;
+}
+
+.mayo-datepicker__day:hover:not(:disabled) { background: var(--mayo-bg-muted); }
+
+.mayo-datepicker__day--today {
+    font-weight: 700;
+    color: var(--mayo-color-primary);
+    border: 1.5px solid var(--mayo-color-primary);
+}
+
+.mayo-datepicker__day--selected {
+    background: var(--mayo-color-primary);
+    color: #fff;
+    font-weight: 700;
+}
+.mayo-datepicker__day--selected:hover { background: var(--mayo-color-primary-hover); }
+
+.mayo-datepicker__day--disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.mayo-datepicker__day--sun { color: var(--mayo-accent-red); }
+.mayo-datepicker__day--sat { color: var(--mayo-color-primary); }
+
+/* year grid */
+.mayo-datepicker__year-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4px;
+    padding: 4px 0;
+}
+
+.mayo-datepicker__year-btn {
+    padding: 8px 4px;
+    border: none;
+    background: none;
+    border-radius: 8px;
+    font-size: 13px;
+    color: var(--mayo-text-secondary);
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease;
+}
+.mayo-datepicker__year-btn:hover { background: var(--mayo-bg-muted); }
+.mayo-datepicker__year-btn--active {
+    background: var(--mayo-color-primary);
+    color: #fff;
+    font-weight: 700;
+}
+
+/* month grid */
+.mayo-datepicker__month-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4px;
+    padding: 4px 0;
+}
+
+.mayo-datepicker__month-btn {
+    padding: 10px 4px;
+    border: none;
+    background: none;
+    border-radius: 8px;
+    font-size: 13px;
+    color: var(--mayo-text-secondary);
+    cursor: pointer;
+    transition: background 0.15s ease;
+}
+.mayo-datepicker__month-btn:hover { background: var(--mayo-bg-muted); }
+.mayo-datepicker__month-btn--active {
+    background: var(--mayo-color-primary);
+    color: #fff;
+    font-weight: 700;
+}
+
+/* footer */
+.mayo-datepicker__footer {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid var(--mayo-border);
+    display: flex;
+    justify-content: center;
+}
+
+.mayo-datepicker__today-btn {
+    border: none;
+    background: none;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--mayo-color-primary);
+    cursor: pointer;
+    padding: 4px 10px;
+    border-radius: 6px;
+    transition: background 0.15s ease;
+}
+.mayo-datepicker__today-btn:hover:not(:disabled) { background: var(--mayo-color-primary-ring); }
+.mayo-datepicker__today-btn:disabled { opacity: 0.4; cursor: not-allowed; }

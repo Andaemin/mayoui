@@ -29,9 +29,24 @@ import { MayoDrawer } from "../components/MayoDrawer";
 import { MayoSkeleton } from "../components/MayoSkeleton";
 import { MayoAccordion } from "../components/MayoAccordion";
 import { MayoSteps } from "../components/MayoSteps";
+import { MayoDatePicker } from "../components/MayoDatePicker";
 import { MayoTable } from "../components/MayoTable";
 import type { MayoTableColumn } from "../components/MayoTable";
 import { MdExpandMore } from "react-icons/md";
+
+function DatePickerDemo() {
+    const [date, setDate] = useState("");
+    const today = new Date();
+    const minDate = `${today.getFullYear()}-01-01`;
+    const maxDate = `${today.getFullYear()}-12-31`;
+    return (
+        <div style={{ display: "flex", gap: 16, flexWrap: "wrap", alignItems: "flex-start" }}>
+            <MayoDatePicker value={date} onChange={setDate} placeholder="날짜를 선택하세요" />
+            <MayoDatePicker value={date} onChange={setDate} minDate={minDate} maxDate={maxDate} placeholder="올해만 선택 가능" />
+            <MayoDatePicker value={date} onChange={setDate} placeholder="비활성화" disabled />
+        </div>
+    );
+}
 
 function DrawerDemo() {
     const [drawerOpen, setDrawerOpen] = useState(false);
@@ -373,6 +388,8 @@ function App() {
                             ]}
                         />
                     </div>
+                    <p>Mayo DatePicker Test</p>
+                    <DatePickerDemo />
                     <p>Mayo Steps Test</p>
                     <div style={{ display: "flex", flexDirection: "column", gap: 32, maxWidth: 560 }}>
                         <MayoSteps

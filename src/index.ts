@@ -32,3 +32,4 @@ export * from "./components/MayoDrawer";
 export * from "./components/MayoSkeleton";
 export * from "./components/MayoAccordion";
 export * from "./components/MayoSteps";
+export * from "./components/MayoDatePicker";
