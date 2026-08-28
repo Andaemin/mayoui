@@ -30,9 +30,22 @@ import { MayoSkeleton } from "../components/MayoSkeleton";
 import { MayoAccordion } from "../components/MayoAccordion";
 import { MayoSteps } from "../components/MayoSteps";
 import { MayoDatePicker } from "../components/MayoDatePicker";
+import { MayoSlider } from "../components/MayoSlider";
 import { MayoTable } from "../components/MayoTable";
 import type { MayoTableColumn } from "../components/MayoTable";
 import { MdExpandMore } from "react-icons/md";
+
+function SliderDemo() {
+    const [val, setVal] = useState(40);
+    return (
+        <div style={{ display: "flex", flexDirection: "column", gap: 16, maxWidth: 400 }}>
+            <MayoSlider value={val} onChange={setVal} color="blue" label="볼륨" showValue />
+            <MayoSlider value={val} onChange={setVal} color="green" label="밝기" showValue />
+            <MayoSlider value={val} onChange={setVal} color="purple" step={10} label="단계 (step 10)" showValue />
+            <MayoSlider value={val} onChange={setVal} color="red" disabled label="비활성화" showValue />
+        </div>
+    );
+}
 
 function DatePickerDemo() {
     const [date, setDate] = useState("");
@@ -388,6 +401,8 @@ function App() {
                             ]}
                         />
                     </div>
+                    <p>Mayo Slider Test</p>
+                    <SliderDemo />
                     <p>Mayo DatePicker Test</p>
                     <DatePickerDemo />
                     <p>Mayo Steps Test</p>
