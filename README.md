@@ -24,7 +24,7 @@
 사용을 권장합니다</h3>
 
 ```bash
-npm install mayoui
+npm install mayoui-react
 ```
 
 <h3> <a href=""> ✅ 공식 문서 (미완)</a> <h3>
