@@ -1,0 +1,105 @@
+.mayo-popover-wrapper {
+    position: relative;
+    display: inline-flex;
+}
+
+.mayo-popover__trigger {
+    cursor: pointer;
+    display: inline-flex;
+}
+
+/* popover panel */
+.mayo-popover {
+    position: absolute;
+    z-index: 200;
+    background: var(--mayo-surface);
+    border: 1px solid var(--mayo-border);
+    border-radius: 10px;
+    box-shadow: var(--mayo-shadow-lg);
+    min-width: 180px;
+    max-width: 280px;
+    padding: 12px 14px;
+    animation: mayo-popover-fadein 0.15s ease;
+}
+
+@keyframes mayo-popover-fadein {
+    from { opacity: 0; transform: scale(0.97); }
+    to   { opacity: 1; transform: scale(1); }
+}
+
+/* position */
+.mayo-popover--bottom {
+    top: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+}
+.mayo-popover--top {
+    bottom: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+}
+.mayo-popover--left {
+    right: calc(100% + 10px);
+    top: 50%;
+    transform: translateY(-50%);
+}
+.mayo-popover--right {
+    left: calc(100% + 10px);
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* arrow */
+.mayo-popover__arrow {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: var(--mayo-surface);
+    border: 1px solid var(--mayo-border);
+    transform: rotate(45deg);
+}
+
+.mayo-popover__arrow--bottom {
+    top: -5px;
+    left: 50%;
+    margin-left: -4px;
+    border-bottom: none;
+    border-right: none;
+}
+.mayo-popover__arrow--top {
+    bottom: -5px;
+    left: 50%;
+    margin-left: -4px;
+    border-top: none;
+    border-left: none;
+}
+.mayo-popover__arrow--left {
+    right: -5px;
+    top: 50%;
+    margin-top: -4px;
+    border-left: none;
+    border-bottom: none;
+}
+.mayo-popover__arrow--right {
+    left: -5px;
+    top: 50%;
+    margin-top: -4px;
+    border-right: none;
+    border-top: none;
+}
+
+/* content */
+.mayo-popover__title {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--mayo-text);
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--mayo-border);
+}
+
+.mayo-popover__content {
+    font-size: 13px;
+    color: var(--mayo-text-secondary);
+    line-height: 1.5;
+}

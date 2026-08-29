@@ -33,6 +33,7 @@ import { MayoDatePicker } from "../components/MayoDatePicker";
 import { MayoSlider } from "../components/MayoSlider";
 import { MayoInputNumber } from "../components/MayoInputNumber";
 import { MayoTimePicker } from "../components/MayoTimePicker";
+import { MayoPopover } from "../components/MayoPopover";
 import { MayoTable } from "../components/MayoTable";
 import type { MayoTableColumn } from "../components/MayoTable";
 import { MdExpandMore } from "react-icons/md";
@@ -427,6 +428,36 @@ function App() {
                                 { key: "방문자", color: "purple", label: "방문자" },
                                 { key: "신규", color: "green", label: "신규 방문자" },
                             ]}
+                        />
+                    </div>
+                    <p>Mayo Popover Test</p>
+                    <div style={{ display: "flex", gap: 24, flexWrap: "wrap", padding: "20px 0" }}>
+                        <MayoPopover
+                            position="bottom"
+                            title="팝오버 제목"
+                            trigger={<MayoBtn size="sm">bottom</MayoBtn>}
+                            content="아래쪽에 표시되는 팝오버입니다. 클릭으로 열고 닫아요."
+                        />
+                        <MayoPopover
+                            position="top"
+                            trigger={<MayoBtn size="sm">top</MayoBtn>}
+                            content="위쪽 팝오버입니다."
+                        />
+                        <MayoPopover
+                            position="right"
+                            title="오른쪽"
+                            trigger={<MayoBtn size="sm">right</MayoBtn>}
+                            content={
+                                <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+                                    <MayoBtn size="sm" variant="secondary">메뉴 1</MayoBtn>
+                                    <MayoBtn size="sm" variant="secondary">메뉴 2</MayoBtn>
+                                </div>
+                            }
+                        />
+                        <MayoPopover
+                            position="left"
+                            trigger={<MayoBtn size="sm">left</MayoBtn>}
+                            content="왼쪽 팝오버입니다."
                         />
                     </div>
                     <p>Mayo InputNumber Test</p>
