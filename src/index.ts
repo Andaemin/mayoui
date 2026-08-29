@@ -34,3 +34,5 @@ export * from "./components/MayoAccordion";
 export * from "./components/MayoSteps";
 export * from "./components/MayoDatePicker";
 export * from "./components/MayoSlider";
+export * from "./components/MayoInputNumber";
+export * from "./components/MayoTimePicker";

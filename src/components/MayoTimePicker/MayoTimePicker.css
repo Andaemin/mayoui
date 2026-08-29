@@ -1,0 +1,128 @@
+.mayo-timepicker {
+    position: relative;
+    display: inline-block;
+}
+
+.mayo-timepicker__input {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 8px 12px;
+    min-width: 140px;
+    border: 1.5px solid var(--mayo-border-strong);
+    border-radius: 10px;
+    background: var(--mayo-bg);
+    color: var(--mayo-text);
+    font-size: 14px;
+    cursor: pointer;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.mayo-timepicker__input:hover:not(:disabled) {
+    border-color: var(--mayo-color-primary);
+}
+
+.mayo-timepicker__input--open {
+    border-color: var(--mayo-color-primary);
+    box-shadow: 0 0 0 3px var(--mayo-color-primary-ring);
+}
+
+.mayo-timepicker__input--disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background: var(--mayo-bg-subtle);
+}
+
+.mayo-timepicker__placeholder { color: var(--mayo-text-placeholder); }
+.mayo-timepicker__value       { color: var(--mayo-text); font-weight: 600; }
+
+/* popup */
+.mayo-timepicker__popup {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    z-index: 200;
+    background: var(--mayo-surface);
+    border: 1px solid var(--mayo-border);
+    border-radius: 12px;
+    box-shadow: var(--mayo-shadow-lg);
+    padding: 8px;
+    animation: mayo-tp-fadein 0.15s ease;
+}
+
+@keyframes mayo-tp-fadein {
+    from { opacity: 0; transform: translateY(-4px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.mayo-timepicker__columns {
+    display: flex;
+    align-items: flex-start;
+    gap: 4px;
+}
+
+.mayo-timepicker__sep {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--mayo-text-muted);
+    padding-top: 36px;
+}
+
+.mayo-timepicker__col {
+    display: flex;
+    flex-direction: column;
+}
+
+.mayo-timepicker__col-header {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--mayo-text-muted);
+    text-align: center;
+    padding: 4px 0 6px;
+}
+
+.mayo-timepicker__col-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    max-height: 200px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--mayo-border) transparent;
+}
+
+.mayo-timepicker__item {
+    width: 52px;
+    padding: 6px 0;
+    border: none;
+    background: none;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--mayo-text-secondary);
+    cursor: pointer;
+    text-align: center;
+    transition: background 0.1s ease, color 0.1s ease;
+}
+
+.mayo-timepicker__item:hover:not(:disabled) {
+    background: var(--mayo-bg-muted);
+}
+
+.mayo-timepicker__item--hover {
+    background: var(--mayo-bg-subtle);
+    color: var(--mayo-color-primary);
+    font-weight: 600;
+}
+
+.mayo-timepicker__item--selected {
+    background: var(--mayo-color-primary);
+    color: #fff;
+    font-weight: 700;
+}
+
+.mayo-timepicker__item--disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}

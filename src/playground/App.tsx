@@ -31,9 +31,37 @@ import { MayoAccordion } from "../components/MayoAccordion";
 import { MayoSteps } from "../components/MayoSteps";
 import { MayoDatePicker } from "../components/MayoDatePicker";
 import { MayoSlider } from "../components/MayoSlider";
+import { MayoInputNumber } from "../components/MayoInputNumber";
+import { MayoTimePicker } from "../components/MayoTimePicker";
 import { MayoTable } from "../components/MayoTable";
 import type { MayoTableColumn } from "../components/MayoTable";
 import { MdExpandMore } from "react-icons/md";
+
+function InputNumberDemo() {
+    const [qty, setQty] = useState(1);
+    return (
+        <div style={{ display: "flex", gap: 24, flexWrap: "wrap", alignItems: "flex-end" }}>
+            <MayoInputNumber value={qty} onChange={setQty} min={0} max={99} label="수량" size="sm" />
+            <MayoInputNumber value={qty} onChange={setQty} min={0} max={99} label="수량" size="md" hint="0~99 사이" />
+            <MayoInputNumber value={qty} onChange={setQty} min={0} max={99} label="수량" size="lg" />
+            <MayoInputNumber value={qty} onChange={setQty} step={10} label="step 10" size="md" />
+            <MayoInputNumber value={qty} onChange={setQty} label="비활성화" size="md" disabled />
+            <MayoInputNumber value={qty} onChange={setQty} label="에러" size="md" error="올바른 수량을 입력하세요" />
+        </div>
+    );
+}
+
+function TimePickerDemo() {
+    const [time, setTime] = useState("");
+    return (
+        <div style={{ display: "flex", gap: 16, flexWrap: "wrap", alignItems: "flex-start" }}>
+            <MayoTimePicker value={time} onChange={setTime} placeholder="시간 선택" />
+            <MayoTimePicker value={time} onChange={setTime} minuteStep={15} placeholder="15분 단위" />
+            <MayoTimePicker value={time} onChange={setTime} minTime="09:00" maxTime="18:00" placeholder="09:00~18:00" />
+            <MayoTimePicker value={time} onChange={setTime} placeholder="비활성화" disabled />
+        </div>
+    );
+}
 
 function SliderDemo() {
     const [val, setVal] = useState(40);
@@ -401,6 +429,10 @@ function App() {
                             ]}
                         />
                     </div>
+                    <p>Mayo InputNumber Test</p>
+                    <InputNumberDemo />
+                    <p>Mayo TimePicker Test</p>
+                    <TimePickerDemo />
                     <p>Mayo Slider Test</p>
                     <SliderDemo />
                     <p>Mayo DatePicker Test</p>

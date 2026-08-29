@@ -1,0 +1,99 @@
+.mayo-input-number-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.mayo-input-number__label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--mayo-text-secondary);
+}
+
+.mayo-input-number {
+    display: inline-flex;
+    align-items: center;
+    border: 1.5px solid var(--mayo-border-strong);
+    border-radius: 10px;
+    background: var(--mayo-bg);
+    overflow: hidden;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.mayo-input-number:focus-within {
+    border-color: var(--mayo-color-primary);
+    box-shadow: 0 0 0 3px var(--mayo-color-primary-ring);
+}
+
+.mayo-input-number--error {
+    border-color: var(--mayo-color-error);
+}
+
+.mayo-input-number--error:focus-within {
+    box-shadow: 0 0 0 3px var(--mayo-color-error-ring);
+}
+
+.mayo-input-number--disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background: var(--mayo-bg-subtle);
+}
+
+/* size */
+.mayo-input-number--sm { height: 32px; }
+.mayo-input-number--md { height: 40px; }
+.mayo-input-number--lg { height: 48px; }
+
+.mayo-input-number__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: none;
+    color: var(--mayo-text-muted);
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 0;
+    flex-shrink: 0;
+    transition: background 0.15s ease, color 0.15s ease;
+    height: 100%;
+}
+
+.mayo-input-number--sm .mayo-input-number__btn { width: 28px; font-size: 14px; }
+.mayo-input-number--md .mayo-input-number__btn { width: 36px; font-size: 16px; }
+.mayo-input-number--lg .mayo-input-number__btn { width: 44px; font-size: 18px; }
+
+.mayo-input-number__btn:hover:not(:disabled) {
+    background: var(--mayo-bg-muted);
+    color: var(--mayo-text);
+}
+
+.mayo-input-number__btn:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+
+.mayo-input-number__input {
+    flex: 1;
+    border: none;
+    background: none;
+    text-align: center;
+    color: var(--mayo-text);
+    font-weight: 600;
+    outline: none;
+    min-width: 0;
+    padding: 0 4px;
+}
+
+.mayo-input-number--sm .mayo-input-number__input { font-size: 13px; }
+.mayo-input-number--md .mayo-input-number__input { font-size: 15px; }
+.mayo-input-number--lg .mayo-input-number__input { font-size: 17px; }
+
+/* 브라우저 기본 화살표 제거 */
+.mayo-input-number__input::-webkit-outer-spin-button,
+.mayo-input-number__input::-webkit-inner-spin-button { -webkit-appearance: none; }
+.mayo-input-number__input[type=number] { -moz-appearance: textfield; }
+
+.mayo-input-number__error { font-size: 13px; color: var(--mayo-color-error); }
+.mayo-input-number__hint  { font-size: 13px; color: var(--mayo-text-muted); }
