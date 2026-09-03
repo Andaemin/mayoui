@@ -34,9 +34,29 @@ import { MayoSlider } from "../components/MayoSlider";
 import { MayoInputNumber } from "../components/MayoInputNumber";
 import { MayoTimePicker } from "../components/MayoTimePicker";
 import { MayoPopover } from "../components/MayoPopover";
+import { MayoRating } from "../components/MayoRating";
 import { MayoTable } from "../components/MayoTable";
 import type { MayoTableColumn } from "../components/MayoTable";
 import { MdExpandMore } from "react-icons/md";
+
+function RatingDemo() {
+    const [rating, setRating] = useState(3);
+    const [half, setHalf] = useState(3.5);
+    return (
+        <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+            <div style={{ display: "flex", gap: 16, alignItems: "center" }}>
+                <MayoRating value={rating} onChange={setRating} size="sm" />
+                <MayoRating value={rating} onChange={setRating} size="md" />
+                <MayoRating value={rating} onChange={setRating} size="lg" />
+            </div>
+            <div style={{ display: "flex", gap: 16, alignItems: "center" }}>
+                <MayoRating value={half} onChange={setHalf} allowHalf />
+                <MayoRating value={4} readonly />
+                <MayoRating value={rating} onChange={setRating} color="#a855f7" />
+            </div>
+        </div>
+    );
+}
 
 function InputNumberDemo() {
     const [qty, setQty] = useState(1);
@@ -430,6 +450,8 @@ function App() {
                             ]}
                         />
                     </div>
+                    <p>Mayo Rating Test</p>
+                    <RatingDemo />
                     <p>Mayo Popover Test</p>
                     <div style={{ display: "flex", gap: 24, flexWrap: "wrap", padding: "20px 0" }}>
                         <MayoPopover

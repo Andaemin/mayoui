@@ -37,3 +37,4 @@ export * from "./components/MayoSlider";
 export * from "./components/MayoInputNumber";
 export * from "./components/MayoTimePicker";
 export * from "./components/MayoPopover";
+export * from "./components/MayoRating";
