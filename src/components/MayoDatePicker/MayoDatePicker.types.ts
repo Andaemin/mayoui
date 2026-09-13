@@ -1,3 +1,5 @@
+export type MayoDatePickerMode = "date" | "month" | "year";
+
 export type MayoDatePickerProps = {
     value?: string;
     onChange?: (value: string) => void;
@@ -5,5 +7,5 @@ export type MayoDatePickerProps = {
     disabled?: boolean;
     minDate?: string;
     maxDate?: string;
-    format?: string;
+    mode?: MayoDatePickerMode;
 };

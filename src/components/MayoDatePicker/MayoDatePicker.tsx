@@ -12,9 +12,13 @@ function toDateStr(d: Date): string {
     return `${y}-${m}-${day}`;
 }
 
+function toMonthStr(y: number, m: number): string {
+    return `${y}-${String(m + 1).padStart(2, "0")}`;
+}
+
 function parseDate(str: string): Date | null {
     if (!str) return null;
-    const d = new Date(str);
+    const d = new Date(str.length === 4 ? `${str}-01-01` : str.length === 7 ? `${str}-01` : str);
     return isNaN(d.getTime()) ? null : d;
 }
 
@@ -34,18 +38,22 @@ function isOutOfRange(date: Date, min?: string, max?: string): boolean {
 export function MayoDatePicker({
     value,
     onChange,
-    placeholder = "날짜 선택",
+    placeholder,
     disabled = false,
     minDate,
     maxDate,
+    mode: pickerMode = "date",
 }: MayoDatePickerProps) {
+    const defaultPlaceholder = pickerMode === "year" ? "년도 선택" : pickerMode === "month" ? "년/월 선택" : "날짜 선택";
     const selected = value ? parseDate(value) : null;
     const today = new Date();
 
     const [open, setOpen] = useState(false);
     const [viewYear, setViewYear] = useState(selected?.getFullYear() ?? today.getFullYear());
     const [viewMonth, setViewMonth] = useState(selected?.getMonth() ?? today.getMonth());
-    const [mode, setMode] = useState<"day" | "month" | "year">("day");
+    const [calMode, setCalMode] = useState<"day" | "month" | "year">(
+        pickerMode === "year" ? "year" : pickerMode === "month" ? "month" : "day"
+    );
 
     const wrapperRef = useRef<HTMLDivElement>(null);
 
@@ -53,12 +61,12 @@ export function MayoDatePicker({
         const handler = (e: MouseEvent) => {
             if (wrapperRef.current && !wrapperRef.current.contains(e.target as Node)) {
                 setOpen(false);
-                setMode("day");
+                setCalMode(pickerMode === "year" ? "year" : pickerMode === "month" ? "month" : "day");
             }
         };
         document.addEventListener("mousedown", handler);
         return () => document.removeEventListener("mousedown", handler);
-    }, []);
+    }, [pickerMode]);
 
     const openCalendar = () => {
         if (disabled) return;
@@ -73,19 +81,40 @@ export function MayoDatePicker({
         if (isOutOfRange(date, minDate, maxDate)) return;
         onChange?.(toDateStr(date));
         setOpen(false);
-        setMode("day");
+        setCalMode("day");
     };
 
-    const prevMonth = () => {
-        if (viewMonth === 0) { setViewMonth(11); setViewYear(y => y - 1); }
-        else setViewMonth(m => m - 1);
-    };
-    const nextMonth = () => {
-        if (viewMonth === 11) { setViewMonth(0); setViewYear(y => y + 1); }
-        else setViewMonth(m => m + 1);
+    const selectMonth = (y: number, m: number) => {
+        if (pickerMode === "month") {
+            onChange?.(toMonthStr(y, m));
+            setOpen(false);
+        } else {
+            setViewMonth(m);
+            setCalMode("day");
+        }
     };
 
-    // 달력 날짜 계산
+    const selectYear = (y: number) => {
+        if (pickerMode === "year") {
+            onChange?.(String(y));
+            setOpen(false);
+        } else {
+            setViewYear(y);
+            setCalMode(pickerMode === "month" ? "month" : "day");
+        }
+    };
+
+    const prevNav = () => {
+        if (calMode === "year") setViewYear(y => y - 12);
+        else if (calMode === "month") setViewYear(y => y - 1);
+        else { if (viewMonth === 0) { setViewMonth(11); setViewYear(y => y - 1); } else setViewMonth(m => m - 1); }
+    };
+    const nextNav = () => {
+        if (calMode === "year") setViewYear(y => y + 12);
+        else if (calMode === "month") setViewYear(y => y + 1);
+        else { if (viewMonth === 11) { setViewMonth(0); setViewYear(y => y + 1); } else setViewMonth(m => m + 1); }
+    };
+
     const firstDay = new Date(viewYear, viewMonth, 1).getDay();
     const daysInMonth = new Date(viewYear, viewMonth + 1, 0).getDate();
     const cells: (Date | null)[] = [
@@ -94,9 +123,11 @@ export function MayoDatePicker({
     ];
     while (cells.length % 7 !== 0) cells.push(null);
 
-    // year picker range
     const yearBase = Math.floor(viewYear / 12) * 12;
     const years = Array.from({ length: 12 }, (_, i) => yearBase + i);
+
+    const selectedYear = selected?.getFullYear();
+    const selectedMonth = selected?.getMonth();
 
     return (
         <div className="mayo-datepicker" ref={wrapperRef}>
@@ -107,7 +138,7 @@ export function MayoDatePicker({
                 disabled={disabled}
             >
                 <span className={value ? "mayo-datepicker__value" : "mayo-datepicker__placeholder"}>
-                    {value || placeholder}
+                    {value || placeholder || defaultPlaceholder}
                 </span>
                 <svg className="mayo-datepicker__icon" viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.5">
                     <rect x="1" y="3" width="14" height="12" rx="2" />
@@ -117,30 +148,32 @@ export function MayoDatePicker({
 
             {open && (
                 <div className="mayo-datepicker__popup">
-                    {/* 헤더 */}
                     <div className="mayo-datepicker__header">
-                        <button className="mayo-datepicker__nav" onClick={mode === "year" ? () => setViewYear(y => y - 12) : prevMonth}>‹</button>
+                        <button className="mayo-datepicker__nav" onClick={prevNav}>‹</button>
                         <div className="mayo-datepicker__title">
-                            <button className="mayo-datepicker__title-btn" onClick={() => setMode(m => m === "year" ? "day" : "year")}>
-                                {viewYear}년
+                            <button
+                                className="mayo-datepicker__title-btn"
+                                onClick={() => pickerMode !== "year" && setCalMode(c => c === "year" ? (pickerMode === "month" ? "month" : "day") : "year")}
+                            >
+                                {calMode === "year" ? `${yearBase} - ${yearBase + 11}` : `${viewYear}년`}
                             </button>
-                            {mode === "day" && (
-                                <button className="mayo-datepicker__title-btn" onClick={() => setMode("month")}>
+                            {calMode === "day" && (
+                                <button className="mayo-datepicker__title-btn" onClick={() => setCalMode("month")}>
                                     {MONTHS[viewMonth]}
                                 </button>
                             )}
                         </div>
-                        <button className="mayo-datepicker__nav" onClick={mode === "year" ? () => setViewYear(y => y + 12) : nextMonth}>›</button>
+                        <button className="mayo-datepicker__nav" onClick={nextNav}>›</button>
                     </div>
 
                     {/* year picker */}
-                    {mode === "year" && (
+                    {calMode === "year" && (
                         <div className="mayo-datepicker__year-grid">
                             {years.map(y => (
                                 <button
                                     key={y}
-                                    className={`mayo-datepicker__year-btn${y === viewYear ? " mayo-datepicker__year-btn--active" : ""}`}
-                                    onClick={() => { setViewYear(y); setMode("day"); }}
+                                    className={`mayo-datepicker__year-btn${y === selectedYear ? " mayo-datepicker__year-btn--active" : ""}${y === viewYear && pickerMode !== "year" ? " mayo-datepicker__year-btn--view" : ""}`}
+                                    onClick={() => selectYear(y)}
                                 >
                                     {y}
                                 </button>
@@ -149,13 +182,13 @@ export function MayoDatePicker({
                     )}
 
                     {/* month picker */}
-                    {mode === "month" && (
+                    {calMode === "month" && (
                         <div className="mayo-datepicker__month-grid">
                             {MONTHS.map((m, i) => (
                                 <button
                                     key={m}
-                                    className={`mayo-datepicker__month-btn${i === viewMonth ? " mayo-datepicker__month-btn--active" : ""}`}
-                                    onClick={() => { setViewMonth(i); setMode("day"); }}
+                                    className={`mayo-datepicker__month-btn${i === selectedMonth && viewYear === selectedYear ? " mayo-datepicker__month-btn--active" : ""}${i === viewMonth && pickerMode !== "month" ? " mayo-datepicker__month-btn--view" : ""}`}
+                                    onClick={() => selectMonth(viewYear, i)}
                                 >
                                     {m}
                                 </button>
@@ -164,7 +197,7 @@ export function MayoDatePicker({
                     )}
 
                     {/* day picker */}
-                    {mode === "day" && (
+                    {calMode === "day" && (
                         <>
                             <div className="mayo-datepicker__weekdays">
                                 {DAYS.map(d => <span key={d} className={`mayo-datepicker__weekday${d === "일" ? " mayo-datepicker__weekday--sun" : d === "토" ? " mayo-datepicker__weekday--sat" : ""}`}>{d}</span>)}
@@ -186,31 +219,22 @@ export function MayoDatePicker({
                                         isSat && !isSelected ? "mayo-datepicker__day--sat" : "",
                                     ].filter(Boolean).join(" ");
                                     return (
-                                        <button
-                                            key={i}
-                                            className={cls}
-                                            onClick={() => selectDate(date)}
-                                            disabled={outOfRange}
-                                        >
+                                        <button key={i} className={cls} onClick={() => selectDate(date)} disabled={outOfRange}>
                                             {date.getDate()}
                                         </button>
                                     );
                                 })}
                             </div>
+                            <div className="mayo-datepicker__footer">
+                                <button
+                                    className="mayo-datepicker__today-btn"
+                                    onClick={() => { setViewYear(today.getFullYear()); setViewMonth(today.getMonth()); selectDate(today); }}
+                                    disabled={isOutOfRange(today, minDate, maxDate)}
+                                >
+                                    오늘
+                                </button>
+                            </div>
                         </>
-                    )}
-
-                    {/* 오늘 버튼 */}
-                    {mode === "day" && (
-                        <div className="mayo-datepicker__footer">
-                            <button
-                                className="mayo-datepicker__today-btn"
-                                onClick={() => { setViewYear(today.getFullYear()); setViewMonth(today.getMonth()); selectDate(today); }}
-                                disabled={isOutOfRange(today, minDate, maxDate)}
-                            >
-                                오늘
-                            </button>
-                        </div>
                     )}
                 </div>
             )}

@@ -35,6 +35,7 @@ import { MayoInputNumber } from "../components/MayoInputNumber";
 import { MayoTimePicker } from "../components/MayoTimePicker";
 import { MayoPopover } from "../components/MayoPopover";
 import { MayoRating } from "../components/MayoRating";
+import { MayoHistogram } from "../components/MayoHistogram";
 import { MayoTable } from "../components/MayoTable";
 import type { MayoTableColumn } from "../components/MayoTable";
 import { MdExpandMore } from "react-icons/md";
@@ -98,12 +99,16 @@ function SliderDemo() {
 
 function DatePickerDemo() {
     const [date, setDate] = useState("");
+    const [month, setMonth] = useState("");
+    const [year, setYear] = useState("");
     const today = new Date();
     const minDate = `${today.getFullYear()}-01-01`;
     const maxDate = `${today.getFullYear()}-12-31`;
     return (
         <div style={{ display: "flex", gap: 16, flexWrap: "wrap", alignItems: "flex-start" }}>
-            <MayoDatePicker value={date} onChange={setDate} placeholder="날짜를 선택하세요" />
+            <MayoDatePicker value={date} onChange={setDate} placeholder="날짜 선택" />
+            <MayoDatePicker value={month} onChange={setMonth} mode="month" />
+            <MayoDatePicker value={year} onChange={setYear} mode="year" />
             <MayoDatePicker value={date} onChange={setDate} minDate={minDate} maxDate={maxDate} placeholder="올해만 선택 가능" />
             <MayoDatePicker value={date} onChange={setDate} placeholder="비활성화" disabled />
         </div>
@@ -410,6 +415,18 @@ function App() {
                         >
                             hover 시 위로 떠오릅니다.
                         </MayoCard>
+                    </div>
+                    <p>Mayo Histogram Test</p>
+                    <div style={{ width: "100%", maxWidth: 600 }}>
+                        <MayoHistogram
+                            title="점수 분포"
+                            data={[45,52,61,70,73,74,75,76,78,80,81,82,83,84,85,85,86,87,88,89,90,90,91,92,93,95,97,98,62,55,48,79,83,88,91,74,66,58,83,77]}
+                            bins={10}
+                            height={240}
+                            xLabel="점수"
+                            yLabel="빈도"
+                            showValues
+                        />
                     </div>
                     <p>Mayo Bar Chart Test</p>
                     <div style={{ width: "100%", maxWidth: 600 }}>

@@ -38,3 +38,4 @@ export * from "./components/MayoInputNumber";
 export * from "./components/MayoTimePicker";
 export * from "./components/MayoPopover";
 export * from "./components/MayoRating";
+export * from "./components/MayoHistogram";

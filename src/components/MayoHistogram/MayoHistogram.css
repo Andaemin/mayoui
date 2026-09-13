@@ -1,0 +1,11 @@
+.mayo-histogram {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    font-family: inherit;
+}
+
+.mayo-histogram__bar {
+    cursor: pointer;
+    transition: opacity 0.15s ease;
+}
