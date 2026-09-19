@@ -1,0 +1,210 @@
+.mayo-calendar {
+    display: inline-flex;
+    flex-direction: column;
+    background: var(--mayo-bg);
+    border: 1px solid var(--mayo-border);
+    border-radius: 12px;
+    padding: 16px;
+    min-width: 300px;
+    user-select: none;
+}
+
+/* 헤더 */
+.mayo-calendar__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.mayo-calendar__nav {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--mayo-text-secondary);
+    font-size: 18px;
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.15s, color 0.15s;
+}
+.mayo-calendar__nav:hover {
+    background: var(--mayo-bg-hover);
+    color: var(--mayo-text);
+}
+
+.mayo-calendar__title {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+
+.mayo-calendar__title-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--mayo-text);
+    font-size: 15px;
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 6px;
+    transition: background 0.15s;
+}
+.mayo-calendar__title-btn:hover {
+    background: var(--mayo-bg-hover);
+}
+
+/* 요일 헤더 */
+.mayo-calendar__weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    margin-bottom: 4px;
+}
+
+.mayo-calendar__weekday {
+    text-align: center;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--mayo-text-secondary);
+    padding: 4px 0;
+}
+.mayo-calendar__weekday--sun { color: var(--mayo-color-error); }
+.mayo-calendar__weekday--sat { color: var(--mayo-color-primary); }
+
+/* 일 그리드 */
+.mayo-calendar__grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+}
+
+.mayo-calendar__cell {
+    min-height: 40px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3px 2px;
+    transition: background 0.12s;
+    gap: 2px;
+}
+.mayo-calendar__cell:hover {
+    background: var(--mayo-bg-hover);
+}
+.mayo-calendar__cell--empty {
+    cursor: default;
+}
+.mayo-calendar__cell--empty:hover {
+    background: none;
+}
+.mayo-calendar__cell--selected {
+    background: var(--mayo-color-primary) !important;
+}
+.mayo-calendar__cell--selected .mayo-calendar__day-num {
+    color: #fff !important;
+}
+.mayo-calendar__cell--today .mayo-calendar__day-num {
+    color: var(--mayo-color-primary);
+    font-weight: 700;
+}
+.mayo-calendar__cell--disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+.mayo-calendar__cell--sun .mayo-calendar__day-num { color: var(--mayo-color-error); }
+.mayo-calendar__cell--sat .mayo-calendar__day-num { color: var(--mayo-color-primary); }
+
+.mayo-calendar__day-num {
+    font-size: 13px;
+    color: var(--mayo-text);
+    line-height: 1.4;
+    min-width: 20px;
+    text-align: center;
+}
+
+/* 이벤트 */
+.mayo-calendar__events {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    width: 100%;
+}
+
+.mayo-calendar__event {
+    font-size: 10px;
+    color: #fff;
+    border-radius: 3px;
+    padding: 1px 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    line-height: 1.5;
+}
+
+.mayo-calendar__event-more {
+    font-size: 10px;
+    color: var(--mayo-text-secondary);
+    padding: 0 2px;
+}
+
+/* 연도 그리드 */
+.mayo-calendar__year-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+    padding: 4px 0;
+}
+
+.mayo-calendar__year-btn {
+    background: none;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    cursor: pointer;
+    color: var(--mayo-text);
+    font-size: 14px;
+    padding: 8px 0;
+    transition: background 0.12s, border-color 0.12s;
+}
+.mayo-calendar__year-btn:hover {
+    background: var(--mayo-bg-hover);
+}
+.mayo-calendar__year-btn--active {
+    background: var(--mayo-color-primary-subtle);
+    border-color: var(--mayo-color-primary);
+    color: var(--mayo-color-primary);
+    font-weight: 600;
+}
+
+/* 월 그리드 */
+.mayo-calendar__month-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+    padding: 4px 0;
+}
+
+.mayo-calendar__month-btn {
+    background: none;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    cursor: pointer;
+    color: var(--mayo-text);
+    font-size: 14px;
+    padding: 12px 0;
+    transition: background 0.12s, border-color 0.12s;
+}
+.mayo-calendar__month-btn:hover {
+    background: var(--mayo-bg-hover);
+}
+.mayo-calendar__month-btn--active {
+    background: var(--mayo-color-primary-subtle);
+    border-color: var(--mayo-color-primary);
+    color: var(--mayo-color-primary);
+    font-weight: 600;
+}

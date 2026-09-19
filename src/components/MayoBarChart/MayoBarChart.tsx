@@ -25,7 +25,8 @@ export function MayoBarChart({ data, series, height = 300, title, showGrid = tru
     const barGap = 2;
     const groupPad = groupW * 0.1;
     const totalBarW = groupW * 0.8;
-    const barW = series.length > 0 ? (totalBarW - barGap * (series.length - 1)) / series.length : 0;
+    const rawBarW = series.length > 0 ? (totalBarW - barGap * (series.length - 1)) / series.length : 0;
+    const barW = Math.min(rawBarW, 48);
 
     return (
         <div

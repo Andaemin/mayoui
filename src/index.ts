@@ -39,3 +39,4 @@ export * from "./components/MayoTimePicker";
 export * from "./components/MayoPopover";
 export * from "./components/MayoRating";
 export * from "./components/MayoHistogram";
+export * from "./components/MayoCalendar";

@@ -36,6 +36,7 @@ import { MayoTimePicker } from "../components/MayoTimePicker";
 import { MayoPopover } from "../components/MayoPopover";
 import { MayoRating } from "../components/MayoRating";
 import { MayoHistogram } from "../components/MayoHistogram";
+import { MayoCalendar } from "../components/MayoCalendar";
 import { MayoTable } from "../components/MayoTable";
 import type { MayoTableColumn } from "../components/MayoTable";
 import { MdExpandMore } from "react-icons/md";
@@ -192,6 +193,28 @@ function PaginationDemo() {
             <MayoPagination page={page} totalPages={20} onChange={setPage} size="md" />
             <MayoPagination page={page} totalPages={20} onChange={setPage} size="lg" />
             <MayoPagination page={page} totalPages={5} onChange={setPage} showFirstLast={false} />
+        </div>
+    );
+}
+
+const today = new Date();
+const todayStr = today.toISOString().slice(0, 10);
+const tomorrowStr = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 1).toISOString().slice(0, 10);
+
+function CalendarDemo() {
+    const [date, setDate] = useState("");
+    return (
+        <div style={{ display: "flex", gap: 24, flexWrap: "wrap", alignItems: "flex-start" }}>
+            <MayoCalendar value={date} onChange={setDate} />
+            <MayoCalendar
+                value={date}
+                onChange={setDate}
+                events={[
+                    { date: todayStr, label: "오늘 일정", color: "#6366f1" },
+                    { date: tomorrowStr, label: "내일 회의" },
+                    { date: tomorrowStr, label: "발표 준비", color: "#ef4444" },
+                ]}
+            />
         </div>
     );
 }
@@ -416,6 +439,8 @@ function App() {
                             hover 시 위로 떠오릅니다.
                         </MayoCard>
                     </div>
+                    <p>Mayo Calendar Test</p>
+                    <CalendarDemo />
                     <p>Mayo Histogram Test</p>
                     <div style={{ width: "100%", maxWidth: 600 }}>
                         <MayoHistogram
